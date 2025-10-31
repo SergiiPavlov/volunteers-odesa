@@ -1,25 +1,30 @@
 'use client';
-import {usePathname, useRouter} from 'next/navigation';
-import {useMemo} from 'react';
+
+import {usePathname, useRouter, useSearchParams} from 'next/navigation';
+import type { Route } from 'next';
 
 type Props = { locale: 'uk'|'en' };
 
-export default function LanguageSwitch({locale}: Props){
-  const pathname = usePathname() || '/';
+export default function LanguageSwitch({ locale }: Props) {
   const router = useRouter();
+  const pathname = usePathname();
+  const search = useSearchParams();
 
-  const other = locale === 'uk' ? 'en' : 'uk';
-
-  const targetPath = useMemo(() => {
-    const parts = pathname.split('/').filter(Boolean);
-    if (parts.length === 0) return `/${other}`;
-    if (parts[0] === 'uk' || parts[0] === 'en') {
-      parts[0] = other;
-    } else {
-      parts.unshift(other);
+  function toPath(target: 'uk'|'en'): Route {
+    const parts = (pathname ?? '/').split('/').filter(Boolean);
+    if (parts.length === 0) {
+      const q = search?.toString();
+      return ('/' + target + (q ? '?' + q : '')) as Route;
     }
-    return '/' + parts.join('/');
-  }, [pathname, other]);
+    if (parts[0] === 'uk' || parts[0] === 'en') parts[0] = target;
+    else parts.unshift(target);
+    const base = '/' + parts.join('/');
+    const q = search?.toString();
+    return (base + (q ? '?' + q : '')) as Route;
+  }
+
+  const other: 'uk'|'en' = locale === 'uk' ? 'en' : 'uk';
+  const targetPath = toPath(other);
 
   return (
     <button
