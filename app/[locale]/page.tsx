@@ -1,61 +1,53 @@
-import Image from 'next/image';
+import Container from '@/components/Container';
 import Link from 'next/link';
 import {getTranslations} from 'next-intl/server';
-import Container from '@/components/Container';
-import GoalCard from '@/components/cards/GoalCard';
 import {getQuickGoals} from '@/lib/cms/fileProvider';
-import {appLocales, type AppLocale} from '@/i18n';
+import GoalCard from '@/components/cards/GoalCard';
 
-export async function generateStaticParams() {
-  return appLocales.map(({code}) => ({locale: code}));
+export async function generateStaticParams(){
+  return [{locale:'uk'},{locale:'en'}];
 }
 
-export default async function Page({params}: {params: {locale: AppLocale}}) {
-  const t = await getTranslations({locale: params.locale, namespace: 'pages.home'});
+export default async function Page({params}:{params:{locale:'uk'|'en'}}){
+  const t = await getTranslations({locale: params.locale, namespace:'hero'});
   const goals = await getQuickGoals(params.locale);
 
   return (
     <>
+      {/* HERO */}
       <section className="section">
         <Container>
-          <div className="grid items-center gap-8 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8 items-center py-10">
             <div className="space-y-6">
-              <h1 className="h1">{t('hero.title')}</h1>
-              <p className="text-lg text-slate-600">{t('hero.subtitle')}</p>
-              <div className="flex flex-wrap gap-3">
-                <Link href={`/${params.locale}/donate`} className="btn">
-                  {t('hero.primaryCta')}
-                </Link>
-                <Link href={`/${params.locale}/about`} className="btn-outline">
-                  {t('hero.secondaryCta')}
-                </Link>
+              <h1 className="h1">{t('title')}</h1>
+              <p className="text-lg text-slate-700">{t('subtitle')}</p>
+              <div className="flex gap-3">
+                <Link href={`/${params.locale}/donate`} className="btn">Підтримати</Link>
+                <Link href={`/${params.locale}/about`} className="btn btn-outline">Дізнатися більше</Link>
               </div>
             </div>
-            <div className="overflow-hidden rounded-2xl shadow">
-              <Image
-                src="/images/placeholders/card.svg"
-                alt={t('hero.imageAlt')}
-                width={1600}
-                height={900}
-                priority
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden border bg-slate-100">
+              <img
+                src="https://picsum.photos/seed/hero-ukraine/1600/1200"
+                alt="Volunteer activity"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="section bg-slate-50">
+      {/* QUICK GOALS */}
+      <section className="section">
         <Container>
-          <div className="mb-6 flex items-center justify-between">
-            <h2 className="h2">{t('sections.quickGoals')}</h2>
-            <Link href={`/${params.locale}/donate`} className="text-sm">
-              {t('sections.allFundraisers')}
-            </Link>
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="h2">Швидкі цілі</h2>
+            <Link href={`/${params.locale}/donate`} className="text-sm">Всі збори →</Link>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {goals.map((goal) => (
-              <GoalCard key={goal.id} item={goal} locale={params.locale} />
-            ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {goals.map(g => (<GoalCard key={g.id} item={g} />))}
           </div>
         </Container>
       </section>

@@ -1,0 +1,166 @@
+
+/* Ukrainian Theme: colors, watermark, and subtle animations.
+   Safe for a11y (prefers-reduced-motion respected) */
+
+:root {
+  --ua-blue: #0057B8;
+  --ua-yellow: #FFD700;
+}
+
+/* Subtle body watermark with stylized trident */
+.ua-watermark-body {
+  position: relative;
+}
+
+.ua-watermark-body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/patterns/tryzub-watermark.svg");
+  background-repeat: no-repeat;
+  background-position: right -40px bottom -40px;
+  background-size: min(38vw, 420px);
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Blue→Yellow animated ribbon under the header */
+.ua-flag-ribbon {
+  position: sticky;
+  top: 0;
+  height: 6px;
+  width: 100%;
+  z-index: 49; /* just below the header (which uses z-50) */
+  background: linear-gradient(90deg, var(--ua-blue), var(--ua-yellow), var(--ua-blue));
+  background-size: 300% 100%;
+  animation: ua-ribbon-shift 9s linear infinite;
+}
+
+@keyframes ua-ribbon-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Optional utility: section with animated UA gradient */
+.ua-gradient-section {
+  position: relative;
+  background: linear-gradient(180deg, rgba(0,87,184,0.10), rgba(255,215,0,0.10));
+}
+
+/* Optional utility: animated CTA with shimmering gradient border */
+.ua-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 1.25rem;
+  border-radius: 1rem;
+  color: white;
+  background: linear-gradient(90deg, var(--ua-blue), var(--ua-yellow));
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.ua-cta.ua-animated {
+  background-size: 300% 100%;
+  animation: ua-ribbon-shift 8s linear infinite;
+}
+
+.ua-cta--outline {
+  color: #0f172a; /* slate-900 */
+  background: transparent;
+  border: 1px solid rgba(15,23,42,0.12);
+}
+
+.ua-cta--outline.ua-animated {
+  border-image: linear-gradient(90deg, var(--ua-blue), var(--ua-yellow)) 1;
+  border-width: 2px;
+  animation: ua-border 8s linear infinite;
+}
+
+@keyframes ua-border {
+  0%   { border-image-slice: 1; border-image-source: linear-gradient(90deg, var(--ua-blue), var(--ua-yellow)); }
+  50%  { border-image-source: linear-gradient(90deg, var(--ua-yellow), var(--ua-blue)); }
+  100% { border-image-source: linear-gradient(90deg, var(--ua-blue), var(--ua-yellow)); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ua-flag-ribbon,
+  .ua-cta.ua-animated,
+  .ua-cta--outline.ua-animated {
+    animation: none !important;
+    background-position: 50% 50% !important;
+  }
+}
+
+/* Layering helper: ensure content sits above the watermark */
+.ua-layer {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* === UA Palette (Header & Hero) === */
+:root {
+  --ua-blue-1: #0a6fdc;
+  --ua-blue-2: #1e86ff;
+  --ua-blue-3: #4aa3ff;
+  --ua-gold-1: #ffd54a;
+  --ua-gold-2: #ffb300;
+  --ua-gold-3: #ff9900;
+}
+
+/* Header gradient (bluish, subtle animation) */
+.ua-header {
+  background: linear-gradient(90deg, var(--ua-blue-1), var(--ua-blue-2), var(--ua-blue-3));
+  background-size: 200% 100%;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+.ua-header.ua-animated {
+  animation: ua-header-flow 16s linear infinite;
+}
+@keyframes ua-header-flow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Make nav text readable on gradient */
+.ua-header .nav-link,
+.ua-header .logo-text {
+  color: #fff !important;
+}
+.ua-header .btn-outline,
+.ua-header .btn {
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
+}
+.ua-header .btn:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* Hero golden gradient (soft, animated) */
+.ua-hero-sunrise {
+  position: relative;
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(255,213,74,0.35), rgba(255,153,0,0) 60%),
+              radial-gradient(900px 450px at 110% 10%, rgba(255,179,0,0.30), rgba(255,153,0,0) 55%),
+              linear-gradient(180deg, rgba(255,213,74,0.20), rgba(255,153,0,0.18) 38%, rgba(255,179,0,0.16));
+  background-size: auto, auto, 100% 100%;
+  animation: ua-hero-breathe 22s ease-in-out infinite;
+}
+@keyframes ua-hero-breathe {
+  0%   { background-position: 0% 0%, 100% 0%, 50% 50%; }
+  50%  { background-position: 10% -5%, 90% -5%, 50% 50%; }
+  100% { background-position: 0% 0%, 100% 0%, 50% 50%; }
+}
+
+/* Respect users' motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .ua-header.ua-animated,
+  .ua-hero-sunrise {
+    animation: none !important;
+    background-position: 50% 50% !important;
+  }
+}

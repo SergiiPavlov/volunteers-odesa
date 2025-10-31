@@ -1,6 +1,5 @@
-import type {AppLocale} from '@/i18n';
 
-export type Locale = AppLocale;
+export type Locale = 'uk'|'en';
 
 export type QuickGoal = {
   id: string;
