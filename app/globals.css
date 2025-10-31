@@ -1,0 +1,2 @@
+/* Proxy file to satisfy `import './globals.css'` in app/layout.tsx */
+@import '../styles/globals.css';

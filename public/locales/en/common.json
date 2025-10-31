@@ -1,0 +1,40 @@
+{
+  "menu": {
+    "home": "Home",
+    "about": "About",
+    "military": "Support for Military",
+    "families": "Support for Families",
+    "stories": "Stories",
+    "partners": "Partners",
+    "news": "News",
+    "donate": "Donate",
+    "contacts": "Contacts",
+    "announcements": "Announcements",
+    "reviews": "Reviews"
+  },
+  "cta": {
+    "donate_now": "Donate now",
+    "learn_more": "Learn more"
+  },
+  "hero": {
+    "title": "Together for those who protect",
+    "subtitle": "Transparent aid for military and families"
+  },
+  "footer": {
+    "rights": "© Volunteer Foundation. All rights reserved."
+  },
+  "contacts": {
+    "email": "Email",
+    "phone": "Phone"
+  },
+  "sections": {
+    "news": "News",
+    "stories": "Stories",
+    "partners": "Partners",
+    "team": "Team",
+    "documents": "Documents",
+    "goals": "Quick goals",
+    "announcements": "Announcements",
+    "reviews": "Reviews"
+  }
+}

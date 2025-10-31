@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gen1",
+    "title": "Generator for unit",
+    "goalAmount": 120000,
+    "raisedAmount": 45000,
+    "deadline": "2025-12-01",
+    "targetKey": "military",
+    "cover": "/images/placeholders/card.svg"
+  },
+  {
+    "id": "med1",
+    "title": "Medical backpacks",
+    "goalAmount": 80000,
+    "raisedAmount": 52000,
+    "deadline": "2025-11-20",
+    "targetKey": "medical",
+    "cover": "/images/placeholders/card.svg"
+  }
+]

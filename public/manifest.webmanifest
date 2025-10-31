@@ -1,0 +1,21 @@
+{
+  "name": "Волонтери",
+  "short_name": "Волонтери",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#0057B8",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "start_url": "/uk"
+}
