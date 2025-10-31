@@ -1,8 +1,8 @@
 'use client';
-import {useEffect, useRef, useState} from 'react';
+import {Suspense, useEffect, useRef, useState} from 'react';
 import Link from 'next/link';
 import LanguageSwitch from '@/components/LanguageSwitch';
-import type { Route } from 'next';
+import {asRoute} from '@/lib/typedRoutes';
 
 type Item = { href: string; label: string };
 type Props = {
@@ -81,7 +81,7 @@ export default function MobileMenu({items, donateHref, donateLabel, locale}: Pro
               {items.map((i) => (
                 <Link
                   key={i.href}
-                  href={i.href as Route}
+                  href={asRoute(i.href)}
                   className="px-3 py-3 rounded-xl hover:bg-slate-50 text-slate-800"
                   onClick={() => setOpen(false)}
                 >
@@ -89,7 +89,7 @@ export default function MobileMenu({items, donateHref, donateLabel, locale}: Pro
                 </Link>
               ))}
               <Link
-                href={donateHref as Route}
+                href={asRoute(donateHref)}
                 className="mt-2 inline-flex items-center justify-center px-4 py-3 rounded-2xl bg-brand text-white hover:opacity-90"
                 onClick={() => setOpen(false)}
               >
@@ -99,7 +99,9 @@ export default function MobileMenu({items, donateHref, donateLabel, locale}: Pro
 
             <hr className="my-4" />
             <div className="flex">
-              <LanguageSwitch locale={locale} />
+              <Suspense fallback={null}>
+                <LanguageSwitch locale={locale} />
+              </Suspense>
             </div>
           </div>
         </div>

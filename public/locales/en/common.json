@@ -18,6 +18,16 @@
     "quickGoals": "Quick goals",
     "allFundraisers": "All fundraisers"
   },
+  "pages": {
+    "donate": {
+      "thankYou": {
+        "title": "Thank you for your support!",
+        "description": "Your contribution helps us deliver aid and equipment to our defenders faster.",
+        "toHome": "Back to home",
+        "seeStories": "See our stories"
+      }
+    }
+  },
   "lang": {
     "uk": "UA",
     "en": "EN"

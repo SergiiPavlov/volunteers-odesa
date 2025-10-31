@@ -2,7 +2,8 @@
 
 import {useEffect, useMemo, useRef, useState} from 'react';
 import {usePathname, useRouter, useSearchParams} from 'next/navigation';
-import type { Route } from 'next';
+import type {Route} from 'next';
+import {asRoute} from '@/lib/typedRoutes';
 
 type LocaleOption = { code: string; label: string };
 
@@ -64,12 +65,12 @@ export default function LanguageDropdown({ locale, locales }: Props) {
   function toPath(target: string): Route {
     const parts = pathname.split('/').filter(Boolean);
     if (parts.length === 0) {
-      return ('/' + target + (search?.toString() ? '?' + search!.toString() : '')) as Route;
+      return asRoute('/' + target + (search?.toString() ? '?' + search!.toString() : ''));
     }
     if (parts[0] === 'uk' || parts[0] === 'en') parts[0] = target;
     else parts.unshift(target);
     const base = '/' + parts.join('/');
-    return (base + (search?.toString() ? '?' + search!.toString() : '')) as Route;
+    return asRoute(base + (search?.toString() ? '?' + search!.toString() : ''));
   }
 
   function onKeyDown(e: React.KeyboardEvent<HTMLDivElement>) {

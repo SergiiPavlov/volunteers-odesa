@@ -2,7 +2,7 @@
 'use client';
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
-import type { Route } from 'next';
+import {asRoute} from '@/lib/typedRoutes';
 
 const locales = ['uk','en'] as const;
 
@@ -14,7 +14,7 @@ export default function LangSwitcher({current}:{current:'uk'|'en'}) {
       {locales.map(l => (
         <Link
           key={l}
-          href={`/${l as Route}${stripped || ''}`}
+          href={asRoute(`/${l}${stripped || ''}`)}
           className={`px-2 py-1 rounded ${current===l ? 'bg-slate-200' : 'hover:bg-slate-100'}`}
           aria-current={current===l ? 'page' : undefined}
         >
