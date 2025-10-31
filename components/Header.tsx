@@ -1,34 +1,46 @@
 import Link from 'next/link';
 import {getTranslations} from 'next-intl/server';
-import Icon from '@/components/Icon';
 import Image from 'next/image';
+import MobileMenu from '@/components/MobileMenu';
 
 type Props = { locale: 'uk'|'en' };
 
 export default async function Header({locale}: Props) {
-  const t = await getTranslations({locale, namespace: 'menu'});
+  const tMenu = await getTranslations({locale, namespace: 'menu'});
+
+  const items = [
+    { href: `/${locale}`, label: tMenu('home') },
+    { href: `/${locale}/about`, label: tMenu('about') },
+    { href: `/${locale}/stories`, label: tMenu('stories') },
+    { href: `/${locale}/news`, label: tMenu('news') },
+    { href: `/${locale}/partners`, label: tMenu('partners') },
+    { href: `/${locale}/announcements`, label: tMenu('announcements') },
+    { href: `/${locale}/reviews`, label: tMenu('reviews') },
+    { href: `/${locale}/contacts`, label: tMenu('contacts') },
+  ] as const;
+
   return (
     <header className="border-b bg-white sticky top-0 z-50">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href={`/${locale}`} className="flex items-center gap-2 font-semibold">
-          {/* Показ логотипа из /public/images/logo.png; без client-обработчиков */}
           <Image src="/images/logo.png" alt="" width={28} height={28} className="w-7 h-7 object-contain" priority />
-          <span className="sr-only">Волонтери</span>
-          {/* Иконка-спрайт можно оставить как декоративную или удалить */}
-          {/* <Icon name="logo" width={28} height={28} /> */}
           <span>Волонтери</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6">
-          <Link href={`/${locale}`} prefetch>{t('home')}</Link>
-          <Link href={`/${locale}/about`}>{t('about')}</Link>
-          <Link href={`/${locale}/stories`}>{t('stories')}</Link>
-          <Link href={`/${locale}/news`}>{t('news')}</Link>
-          <Link href={`/${locale}/partners`}>{t('partners')}</Link>
-          <Link href={`/${locale}/announcements`}>{t('announcements')}</Link>
-          <Link href={`/${locale}/reviews`}>{t('reviews')}</Link>
-          <Link href={`/${locale}/donate`} className="btn">{t('donate')}</Link>
-          <Link href={`/${locale}/contacts`}>{t('contacts')}</Link>
+
+        {/* Desktop nav: visible only from >=1024px */}
+        <nav className="hidden lg:flex items-center gap-6">
+          {items.map(i => (
+            <Link key={i.href} href={i.href} prefetch>{i.label}</Link>
+          ))}
+          <Link href={`/${locale}/donate`} className="btn">{tMenu('donate')}</Link>
         </nav>
+
+        {/* Mobile burger (shown <1024px) */}
+        <MobileMenu
+          items={items}
+          donateHref={`/${locale}/donate`}
+          donateLabel={tMenu('donate')}
+        />
       </div>
     </header>
   );
