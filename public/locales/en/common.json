@@ -1,25 +1,160 @@
 {
-  "menu": {
-    "home": "Home",
-    "about": "About",
-    "stories": "Stories",
-    "news": "News",
-    "partners": "Partners",
-    "announcements": "Announcements",
-    "reviews": "Reviews",
-    "donate": "Donate",
-    "contacts": "Contacts"
-  },
-  "hero": {
-    "title": "Together for those who protect",
-    "subtitle": "We support military and families with gear, aid and care."
-  },
-  "sections": {
-    "quickGoals": "Quick goals",
-    "allFundraisers": "All fundraisers"
-  },
-  "lang": {
-    "uk": "UA",
-    "en": "EN"
-  }
+    "menu": {
+        "home": "Home",
+        "about": "About",
+        "stories": "Stories",
+        "news": "News",
+        "partners": "Partners",
+        "announcements": "Announcements",
+        "reviews": "Reviews",
+        "donate": "Donate",
+        "contacts": "Contacts"
+    },
+    "languages": {
+        "uk": "Ukrainian",
+        "en": "English"
+    },
+    "components": {
+        "header": {
+            "logoAlt": "Foundation logo",
+            "logoText": "Volunteers",
+            "homeLinkLabel": "Go to the home page"
+        },
+        "footer": {
+            "copyright": "\u00a9 Volunteer Foundation",
+            "links": {
+                "pwa": "PWA",
+                "robots": "robots.txt",
+                "sitemap": "sitemap.xml"
+            }
+        },
+        "mobileMenu": {
+            "title": "Menu",
+            "openLabel": "Menu",
+            "openAria": "Open mobile menu",
+            "closeLabel": "Close",
+            "closeAria": "Close mobile menu"
+        },
+        "languageDropdown": {
+            "ariaLabel": "Switch language to {language}",
+            "currentLanguage": "Current language: {language}",
+            "optionLabel": "{label} \u00b7 {language}"
+        },
+        "goalCard": {
+            "imageAlt": "Fundraiser: {title}",
+            "progressLabel": "Fundraiser progress: {percentage}%",
+            "raised": "Raised: {amount} {currency}",
+            "goal": "Goal: {amount} {currency}",
+            "supportCta": "Support"
+        }
+    },
+    "pages": {
+        "common": {
+            "underConstruction": "This page is in progress. We'll add the content in the next phases."
+        },
+        "home": {
+            "hero": {
+                "title": "Together for those who protect",
+                "subtitle": "We support service members and families with gear, aid and care.",
+                "primaryCta": "Donate now",
+                "secondaryCta": "Learn more",
+                "imageAlt": "Hero illustration"
+            },
+            "sections": {
+                "quickGoals": "Quick goals",
+                "allFundraisers": "All fundraisers \u2192"
+            }
+        },
+        "about": {
+            "title": "About"
+        },
+        "stories": {
+            "title": "Stories"
+        },
+        "news": {
+            "title": "News"
+        },
+        "partners": {
+            "title": "Partners"
+        },
+        "contacts": {
+            "title": "Contacts"
+        },
+        "announcements": {
+            "title": "Announcements",
+            "form": {
+                "titlePlaceholder": "Subject",
+                "categoryPlaceholder": "Category",
+                "textPlaceholder": "Text",
+                "contactPlaceholder": "Contact (Telegram, email or phone)",
+                "submit": "Publish (moderation)",
+                "submitting": "Sending\u2026",
+                "help": "Spam protection (hCaptcha/Turnstile) will be added later."
+            },
+            "errors": {
+                "generic": "Something went wrong. Please try again."
+            },
+            "statuses": {
+                "pending": "Pending",
+                "approved": "Published",
+                "rejected": "Rejected"
+            },
+            "list": {
+                "contact": "Contact: {contact}"
+            }
+        },
+        "reviews": {
+            "title": "Reviews",
+            "form": {
+                "namePlaceholder": "Name",
+                "roles": {
+                    "donor": "Donor",
+                    "recipient": "Recipient"
+                },
+                "reviewPlaceholder": "Your feedback",
+                "submit": "Publish (moderation)",
+                "submitting": "Sending\u2026",
+                "help": "Your review will appear after moderation. Anti-spam is coming soon."
+            },
+            "roles": {
+                "donor": "Donor",
+                "recipient": "Recipient"
+            },
+            "errors": {
+                "generic": "Something went wrong. Please try again."
+            }
+        },
+        "donate": {
+            "title": "Donate",
+            "description": "The donation page (presets, LiqPay/WayForPay/PayPal) will be implemented in the next phase.",
+            "amount": "Donation amount",
+            "otherAmount": "Custom amount",
+            "selectedAmount": "You selected: {amount}",
+            "target": "Focus area",
+            "targets": {
+                "frontline": "Frontline support",
+                "medical": "Medical aid",
+                "families": "Military families"
+            },
+            "provider": "Payment provider",
+            "providers": {
+                "liqpay": "LiqPay",
+                "wayforpay": "WayForPay",
+                "paypal": "PayPal"
+            },
+            "support": "Support the foundation",
+            "howWeUse": "How we use donations",
+            "howWeUseList": [
+                "We purchase verified equipment and technology.",
+                "We supply medical kits and medicines.",
+                "We help military families with urgent needs."
+            ],
+            "thankYou": {
+                "title": "Thank you for your support!",
+                "description": "Your contribution helps us equip defenders faster.",
+                "toHome": "Back to home",
+                "seeStories": "View stories"
+            }
+        }
+    }
 }

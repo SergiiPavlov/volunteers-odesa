@@ -1,9 +1,12 @@
 
 import createMiddleware from 'next-intl/middleware';
+import {appLocales, defaultLocale} from './i18n';
+
+const localeCodes = appLocales.map(({code}) => code);
 
 export default createMiddleware({
-  locales: ['uk', 'en'],
-  defaultLocale: 'uk'
+  locales: localeCodes,
+  defaultLocale
 });
 
 export const config = {
