@@ -4,7 +4,8 @@ import Link from 'next/link';
 
 type Item = { href: string; label: string };
 type Props = {
-  items: Item[];
+  /** Accept readonly arrays to be compatible with `as const` call sites */
+  items: ReadonlyArray<Item>;
   donateHref: string;
   donateLabel: string;
 };
