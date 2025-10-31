@@ -1,23 +1,18 @@
 'use client';
-import {Suspense, useEffect, useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import Link from 'next/link';
-import {useTranslations} from 'next-intl';
-import type {Route} from 'next';
-import LanguageDropdown, {type LocaleOption} from '@/components/LanguageDropdown';
-import type {AppLocale} from '@/i18n';
+import LanguageSwitch from '@/components/LanguageSwitch';
 
-type Item = {href: string; label: string};
+type Item = { href: string; label: string };
 type Props = {
   /** Accept readonly arrays to be compatible with `as const` call sites */
   items: ReadonlyArray<Item>;
   donateHref: string;
   donateLabel: string;
-  locale: AppLocale;
-  locales: ReadonlyArray<LocaleOption>;
+  locale: 'uk'|'en';
 };
 
-export default function MobileMenu({items, donateHref, donateLabel, locale, locales}: Props) {
-  const t = useTranslations('components.mobileMenu');
+export default function MobileMenu({items, donateHref, donateLabel, locale}: Props) {
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const btnRef = useRef<HTMLButtonElement | null>(null);
@@ -41,7 +36,6 @@ export default function MobileMenu({items, donateHref, donateLabel, locale, loca
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-controls="mobile-menu-panel"
-        aria-label={t('openAria')}
         onClick={() => setOpen(v => !v)}
         className="inline-flex items-center justify-center w-10 h-10 rounded-xl border hover:bg-slate-50"
       >
@@ -49,7 +43,7 @@ export default function MobileMenu({items, donateHref, donateLabel, locale, loca
         <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
-        <span className="sr-only">{t('openLabel')}</span>
+        <span className="sr-only">Menu</span>
       </button>
 
       {open && (
@@ -69,17 +63,16 @@ export default function MobileMenu({items, donateHref, donateLabel, locale, loca
 
           {/* Sheet */}
           <div className="absolute right-0 top-0 h-full w-[88%] max-w-[420px] bg-white shadow-xl p-6 overflow-y-auto focus:outline-none">
-            <div className="mb-4 flex items-center justify-between">
-              <div className="text-lg font-semibold">{t('title')}</div>
+            <div className="flex items-center justify-between mb-4">
+              <div className="text-lg font-semibold">Меню</div>
               <button
                 onClick={() => setOpen(false)}
                 className="w-10 h-10 inline-flex items-center justify-center rounded-xl border hover:bg-slate-50"
-                aria-label={t('closeAria')}
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
-                <span className="sr-only">{t('closeLabel')}</span>
+                <span className="sr-only">Close</span>
               </button>
             </div>
 
@@ -87,7 +80,7 @@ export default function MobileMenu({items, donateHref, donateLabel, locale, loca
               {items.map((i) => (
                 <Link
                   key={i.href}
-                  href={i.href as Route}
+                  href={i.href}
                   className="px-3 py-3 rounded-xl hover:bg-slate-50 text-slate-800"
                   onClick={() => setOpen(false)}
                 >
@@ -95,7 +88,7 @@ export default function MobileMenu({items, donateHref, donateLabel, locale, loca
                 </Link>
               ))}
               <Link
-                href={donateHref as Route}
+                href={donateHref}
                 className="mt-2 inline-flex items-center justify-center px-4 py-3 rounded-2xl bg-brand text-white hover:opacity-90"
                 onClick={() => setOpen(false)}
               >
@@ -105,9 +98,7 @@ export default function MobileMenu({items, donateHref, donateLabel, locale, loca
 
             <hr className="my-4" />
             <div className="flex">
-              <Suspense fallback={null}>
-                <LanguageDropdown locale={locale} locales={locales} />
-              </Suspense>
+              <LanguageSwitch locale={locale} />
             </div>
           </div>
         </div>

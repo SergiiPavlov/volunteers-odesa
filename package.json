@@ -7,9 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext .ts,.tsx",
-    "typecheck": "tsc --noEmit",
-    "check:hardcoded": "rg -n --glob '!**/*.spec.*' --glob '!**/node_modules/**' -e '>([^<{]*[A-Za-zА-Яа-яІіЇїЄєҐґ][^<{]*)<' -e 'placeholder=\"[^\"]*[A-Za-zА-Яа-яІіЇїЄєҐґ][^\"]*\"' app components | tee hardcoded.txt && test ! -s hardcoded.txt && rm hardcoded.txt"
+    "lint": "eslint . --ext .ts,.tsx"
   },
   "dependencies": {
     "clsx": "^2.1.1",

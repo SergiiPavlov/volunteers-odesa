@@ -1,28 +1,29 @@
 import {ReactNode} from 'react';
 import {NextIntlClientProvider} from 'next-intl';
-import {unstable_setRequestLocale} from 'next-intl/server';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import {appLocales, type AppLocale} from '@/i18n';
+import UARibbon from '@/components/UARibbon';
 
-async function getMessages(locale: AppLocale){
+async function getMessages(locale: 'uk'|'en'){
   const messages = (await import(`@/public/locales/${locale}/common.json`)).default;
   return messages;
 }
 
 export async function generateStaticParams(){
-  return appLocales.map(({code}) => ({locale: code}));
+  return [{locale:'uk'},{locale:'en'}];
 }
 
-export default async function LocaleLayout({children, params}:{children:ReactNode, params:{locale:AppLocale}}){
+export default async function LocaleLayout({children, params}:{children:ReactNode, params:{locale:'uk'|'en'}}){
   const messages = await getMessages(params.locale);
-  unstable_setRequestLocale(params.locale);
   return (
     <html lang={params.locale}>
-      <body>
+      <body className="ua-watermark-body">
         <NextIntlClientProvider messages={messages} locale={params.locale}>
+          {/* @ts-expect-error Server Component */}
           <Header locale={params.locale} />
+          <UARibbon />
           <main>{children}</main>
+          {/* @ts-expect-error Server Component */}
           <Footer />
         </NextIntlClientProvider>
       </body>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="uaFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0057B8" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#FFD700" stop-opacity="0.10"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#uaFade)">
+    <path d="M256 20c20 48 32 94 32 144 0 20-2 40-6 60l26-18c32-22 68-40 104-54-28 32-52 78-72 124l-12 34 32 14c-24 11-52 18-80 22l-26 2v120h-40V348l-26-2c-28-4-56-11-80-22l32-14-12-34c-20-46-44-92-72-124 36 14 72 32 104 54l26 18c-4-20-6-40-6-60 0-50 12-96 32-144z"/>
+  </g>
+</svg>

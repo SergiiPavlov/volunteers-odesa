@@ -1,18 +1,11 @@
-import {getTranslations} from 'next-intl/server';
+
 import Container from '@/components/Container';
-import type {AppLocale} from '@/i18n';
-
-type PageProps = {params: {locale: AppLocale}};
-
-export default async function Page({params}: PageProps) {
-  const t = await getTranslations({locale: params.locale, namespace: 'pages.about'});
-  const tCommon = await getTranslations({locale: params.locale, namespace: 'pages.common'});
-
+export default function Page() {
   return (
     <section className="section">
       <Container>
-        <h1 className="h1">{t('title')}</h1>
-        <p className="mt-4 text-slate-600">{tCommon('underConstruction')}</p>
+        <h1 className="h1">Про фонд</h1>
+        <p className="mt-4 text-slate-600">Сторінка в розробці. Контент підключимо з CMS/платежів на наступних етапах.</p>
       </Container>
     </section>
   );
