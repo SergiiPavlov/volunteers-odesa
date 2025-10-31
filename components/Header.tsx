@@ -2,6 +2,7 @@ import Link from 'next/link';
 import {getTranslations} from 'next-intl/server';
 import Image from 'next/image';
 import MobileMenu from '@/components/MobileMenu';
+import LanguageSwitch from '@/components/LanguageSwitch';
 
 type Props = { locale: 'uk'|'en' };
 
@@ -27,20 +28,28 @@ export default async function Header({locale}: Props) {
           <span>Волонтери</span>
         </Link>
 
-        {/* Desktop nav: visible only from >=1024px */}
-        <nav className="hidden lg:flex items-center gap-6">
-          {items.map(i => (
-            <Link key={i.href} href={i.href} prefetch>{i.label}</Link>
-          ))}
-          <Link href={`/${locale}/donate`} className="btn">{tMenu('donate')}</Link>
-        </nav>
+        <div className="flex items-center gap-3">
+          {/* Desktop nav: visible only from >=1024px */}
+          <nav className="hidden lg:flex items-center gap-6">
+            {items.map(i => (
+              <Link key={i.href} href={i.href} prefetch>{i.label}</Link>
+            ))}
+            <Link href={`/${locale}/donate`} className="btn">{tMenu('donate')}</Link>
+          </nav>
 
-        {/* Mobile burger (shown <1024px) */}
-        <MobileMenu
-          items={items}
-          donateHref={`/${locale}/donate`}
-          donateLabel={tMenu('donate')}
-        />
+          {/* Desktop language switch */}
+          <div className="hidden lg:block">
+            <LanguageSwitch locale={locale} />
+          </div>
+
+          {/* Mobile burger (shown <1024px), includes language switch inside the sheet */}
+          <MobileMenu
+            items={items}
+            donateHref={`/${locale}/donate`}
+            donateLabel={tMenu('donate')}
+            locale={locale}
+          />
+        </div>
       </div>
     </header>
   );

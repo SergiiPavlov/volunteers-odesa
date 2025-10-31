@@ -1,6 +1,7 @@
 'use client';
 import {useEffect, useRef, useState} from 'react';
 import Link from 'next/link';
+import LanguageSwitch from '@/components/LanguageSwitch';
 
 type Item = { href: string; label: string };
 type Props = {
@@ -8,9 +9,10 @@ type Props = {
   items: ReadonlyArray<Item>;
   donateHref: string;
   donateLabel: string;
+  locale: 'uk'|'en';
 };
 
-export default function MobileMenu({items, donateHref, donateLabel}: Props) {
+export default function MobileMenu({items, donateHref, donateLabel, locale}: Props) {
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const btnRef = useRef<HTMLButtonElement | null>(null);
@@ -93,6 +95,11 @@ export default function MobileMenu({items, donateHref, donateLabel}: Props) {
                 {donateLabel}
               </Link>
             </nav>
+
+            <hr className="my-4" />
+            <div className="flex">
+              <LanguageSwitch locale={locale} />
+            </div>
           </div>
         </div>
       )}
