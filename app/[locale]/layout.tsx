@@ -19,11 +19,11 @@ export default async function LocaleLayout({children, params}:{children:ReactNod
     <html lang={params.locale}>
       <body className="ua-watermark-body">
         <NextIntlClientProvider messages={messages} locale={params.locale}>
-          {/* @ts-expect-error Server Component */}
+          
           <Header locale={params.locale} />
           <UARibbon />
           <main>{children}</main>
-          {/* @ts-expect-error Server Component */}
+          
           <Footer />
         </NextIntlClientProvider>
       </body>

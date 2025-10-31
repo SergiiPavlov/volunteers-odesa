@@ -2,6 +2,7 @@
 import {useEffect, useRef, useState} from 'react';
 import Link from 'next/link';
 import LanguageSwitch from '@/components/LanguageSwitch';
+import type { Route } from 'next';
 
 type Item = { href: string; label: string };
 type Props = {
@@ -80,7 +81,7 @@ export default function MobileMenu({items, donateHref, donateLabel, locale}: Pro
               {items.map((i) => (
                 <Link
                   key={i.href}
-                  href={i.href}
+                  href={i.href as Route}
                   className="px-3 py-3 rounded-xl hover:bg-slate-50 text-slate-800"
                   onClick={() => setOpen(false)}
                 >
@@ -88,7 +89,7 @@ export default function MobileMenu({items, donateHref, donateLabel, locale}: Pro
                 </Link>
               ))}
               <Link
-                href={donateHref}
+                href={donateHref as Route}
                 className="mt-2 inline-flex items-center justify-center px-4 py-3 rounded-2xl bg-brand text-white hover:opacity-90"
                 onClick={() => setOpen(false)}
               >
