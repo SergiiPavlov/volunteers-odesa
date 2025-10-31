@@ -1,11 +1,10 @@
+import {Suspense} from 'react';
 import Link from 'next/link';
 import {getTranslations} from 'next-intl/server';
 import Image from 'next/image';
 import MobileMenu from '@/components/MobileMenu';
 import LanguageSwitch from '@/components/LanguageSwitch';
-
-function toRoute(p: string): Route { return (p as unknown) as Route; }
-import type { Route } from 'next';
+import {asRoute} from '@/lib/typedRoutes';
 
 type Props = { locale: 'uk'|'en' };
 
@@ -26,7 +25,7 @@ export default async function Header({locale}: Props) {
   return (
     <header className="border-b bg-transparent sticky top-0 z-50 ua-header ua-animated text-white">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href={`/${locale as Route}`} className="flex items-center gap-2 font-semibold">
+        <Link href={asRoute(`/${locale}`)} className="flex items-center gap-2 font-semibold">
           <Image src="/images/logo.png" alt="" width={28} height={28} className="w-7 h-7 object-contain" priority />
           <span>Волонтери</span>
         </Link>
@@ -35,14 +34,16 @@ export default async function Header({locale}: Props) {
           {/* Desktop nav: visible only from >=1024px */}
           <nav className="hidden lg:flex items-center gap-6">
             {items.map(i => (
-              <Link key={i.href} href={i.href as Route} prefetch>{i.label}</Link>
+              <Link key={i.href} href={asRoute(i.href)} prefetch>{i.label}</Link>
             ))}
-            <Link href={`/${locale as Route}/donate`} className="btn text-white">{tMenu('donate')}</Link>
+            <Link href={asRoute(`/${locale}/donate`)} className="btn text-white">{tMenu('donate')}</Link>
           </nav>
 
           {/* Desktop language switch */}
           <div className="hidden lg:block">
-            <LanguageSwitch locale={locale} />
+            <Suspense fallback={null}>
+              <LanguageSwitch locale={locale} />
+            </Suspense>
           </div>
 
           {/* Mobile burger (shown <1024px), includes language switch inside the sheet */}
