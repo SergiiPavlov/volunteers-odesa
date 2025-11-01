@@ -34,13 +34,16 @@
       "title": "Donate"
     },
     "about": {
-      "title": "About the Fund"
+      "title": "About the foundation"
+    },
+    "news": {
+      "title": "News"
     },
     "partners": {
       "title": "Partners"
     },
-    "news": {
-      "title": "News"
+    "contacts": {
+      "title": "Contacts"
     },
     "stories": {
       "title": "Stories"
@@ -48,31 +51,17 @@
     "announcements": {
       "title": "Announcements"
     },
-    "contacts": {
-      "title": "Contacts"
+    "common": {
+      "underConstruction": "This page is under construction."
     },
     "reviews": {
       "title": "Reviews",
       "form": {
-        "name": "Name",
-        "role": "Role",
+        "name": "Your name",
+        "text": "Your review",
+        "submit": "Send review",
         "donor": "Donor",
-        "recipient": "Recipient",
-        "text": "Review text",
-        "submit": "Send"
-      }
-    },
-    "common": {
-      "underConstruction": "Page under construction. We will connect content from the CMS/payments in the next stages."
-    }
-  },
-  "pages": {
-    "donate": {
-      "thankYou": {
-        "title": "Thank you for your support!",
-        "description": "Your contribution helps us deliver aid and equipment to our defenders faster.",
-        "toHome": "Back to home",
-        "seeStories": "See our stories"
+        "recipient": "Recipient"
       }
     }
   },

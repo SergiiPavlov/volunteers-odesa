@@ -17,11 +17,19 @@ export default async function GoalCard({item}:{item: QuickGoal}){
 
   return (
     <article className="bg-white rounded-2xl overflow-hidden border">
-      <div className="aspect-video bg-slate-100" style={{ backgroundImage: `url('${item.cover || ''}')`, backgroundSize: "cover", backgroundPosition: "center" }}></div>
+      <div className="relative aspect-video bg-slate-100">
+        <Image
+          src={item.cover ?? '/images/fallbacks/photo-fallback.svg'}
+          alt={item.title}
+          fill
+          sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
+          className="object-cover"
+        />
+      </div>
       <div className="p-5 space-y-3">
         <h3 className="font-semibold text-lg">{item.title}</h3>
         <div className="progress" role="progressbar" aria-valuenow={p} aria-valuemin={0} aria-valuemax={100}>
-          <div className="progress__bar" style={{width: `${p}%`}}/>
+          <div className="progress__bar" style={{width: `${p}%`}} />
         </div>
         <div className="text-sm text-slate-600 flex items-center justify-between">
           <span>{tSections('collected')}: {nf.format(item.raisedAmount)} ₴</span>
