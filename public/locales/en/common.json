@@ -66,6 +66,16 @@
       "underConstruction": "Page under construction. We will connect content from the CMS/payments in the next stages."
     }
   },
+  "pages": {
+    "donate": {
+      "thankYou": {
+        "title": "Thank you for your support!",
+        "description": "Your contribution helps us deliver aid and equipment to our defenders faster.",
+        "toHome": "Back to home",
+        "seeStories": "See our stories"
+      }
+    }
+  },
   "lang": {
     "uk": "UA",
     "en": "EN"
