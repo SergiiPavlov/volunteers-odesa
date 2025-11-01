@@ -14,7 +14,7 @@ export default function RootLayout({children}:{children:ReactNode}){
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.webmanifest" />
       </head>
-      <body>{children}</body>
+      <body className="bg-gradient-to-b from-cyan-200 min-h-screen to-yellow-200 via-lime-200">{children}</body>
     </html>
   );
 }

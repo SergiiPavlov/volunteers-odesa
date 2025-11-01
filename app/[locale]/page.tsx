@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Container from '@/components/Container';
 import Link from 'next/link';
 import {getTranslations} from 'next-intl/server';
@@ -20,10 +21,20 @@ export default async function Page({params}:{params:{locale:'uk'|'en'}}){
       <section className="section">
         <Container>
           <div className="grid md:grid-cols-2 gap-8 items-center py-10">
-            <div className="space-y-6">
-              <h1 className="h1">{t('title')}</h1>
+            <div className="space-y-6 text-center md:text-left">
+                <div className="flex items-center justify-center md:justify-start gap-6">
+  {/* Amondrex logo without extra tile */}
+  <div className="relative h-24 w-24 md:h-36 md:w-36">
+    <Image src="/images/logos/amondrex_white.png" alt="Amondrex Charity Fund" fill className="object-contain object-center" priority />
+  </div>
+  {/* Trident logo, same size */}
+  <div className="relative h-24 w-24 md:h-36 md:w-36">
+    <Image src="/images/logos/ua-trident.png" alt="Ukraine coat of arms" fill className="object-contain object-center" />
+  </div>
+</div>
+<h1 className="h1">{t('title')}</h1>
               <p className="text-lg text-slate-700">{t('subtitle')}</p>
-              <div className="flex gap-3">
+              <div className="flex gap-3 justify-center md:justify-start">
                 <Link href={asRoute(`/${params.locale}/donate`)} className="btn">{t("ctaDonate")}</Link>
                 <Link href={asRoute(`/${params.locale}/about`)} className="btn btn-outline">{t("ctaLearnMore")}</Link>
               </div>

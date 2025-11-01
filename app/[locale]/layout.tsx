@@ -31,7 +31,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={params.locale}>
-      <body className="ua-watermark-body">
+      <body className="bg-gradient-to-b from-cyan-200 min-h-screen to-yellow-200 ua-watermark-body via-lime-200">
         <NextIntlClientProvider messages={messages} locale={params.locale}>
           <Header locale={params.locale} />
           <UARibbon />
