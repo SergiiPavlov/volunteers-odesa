@@ -1,0 +1,75 @@
+{
+  "menu": {
+    "home": "Home",
+    "about": "About",
+    "stories": "Stories",
+    "news": "News",
+    "partners": "Partners",
+    "announcements": "Announcements",
+    "reviews": "Reviews",
+    "donate": "Donate",
+    "contacts": "Contacts"
+  },
+  "hero": {
+    "title": "Together for those who protect",
+    "subtitle": "We support military and families with gear, aid and care.",
+    "ctaDonate": "Donate",
+    "ctaLearnMore": "Learn more"
+  },
+  "sections": {
+    "quickGoals": "Quick goals",
+    "allFundraisers": "All fundraisers",
+    "collected": "Raised",
+    "goal": "Goal",
+    "support": "Support"
+  },
+  "pages": {
+    "donate": {
+      "thankYou": {
+        "title": "Thank you for your support!",
+        "description": "Your contribution helps us deliver aid and equipment to our defenders faster.",
+        "toHome": "Back to home",
+        "seeStories": "See our stories"
+      },
+      "title": "Donate"
+    },
+    "about": {
+      "title": "About the foundation"
+    },
+    "news": {
+      "title": "News"
+    },
+    "partners": {
+      "title": "Partners"
+    },
+    "contacts": {
+      "title": "Contacts"
+    },
+    "stories": {
+      "title": "Stories"
+    },
+    "announcements": {
+      "title": "Announcements"
+    },
+    "common": {
+      "underConstruction": "This page is under construction."
+    },
+    "reviews": {
+      "title": "Reviews",
+      "form": {
+        "name": "Your name",
+        "text": "Your review",
+        "submit": "Send review",
+        "donor": "Donor",
+        "recipient": "Recipient"
+      }
+    }
+  },
+  "lang": {
+    "uk": "UA",
+    "en": "EN"
+  },
+  "footer": {
+    "copy": "© Volunteer Foundation"
+  }
+}
