@@ -1,5 +1,6 @@
 import {ReactNode} from 'react';
 import {NextIntlClientProvider} from 'next-intl';
+import {unstable_setRequestLocale} from 'next-intl/server';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import UARibbon from '@/components/UARibbon';
@@ -14,6 +15,7 @@ export async function generateStaticParams(){
 }
 
 export default async function LocaleLayout({children, params}:{children:ReactNode, params:{locale:'uk'|'en'}}){
+  unstable_setRequestLocale(params.locale);
   const messages = await getMessages(params.locale);
   return (
     <html lang={params.locale}>
