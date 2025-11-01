@@ -1,6 +1,6 @@
-
 'use client';
 import {useEffect, useState} from 'react';
+import {useLocale, useTranslations} from 'next-intl';
 import Container from '@/components/Container';
 
 type Item = {
@@ -14,56 +14,61 @@ type Item = {
 
 export default function Page(){
   const [items, setItems] = useState<Item[]>([]);
-  const [pending, setPending] = useState(false);
-  const [form, setForm] = useState({authorName:'', role:'donor', text:''});
-  const [error, setError] = useState<string|null>(null);
+  const [form, setForm] = useState<{authorName:string; role:'donor'|'recipient'; text:string}>({authorName:'', role:'donor', text:''});
+  const [submitting, setSubmitting] = useState(false);
 
-  async function load(){
-    const r = await fetch('/api/reviews', {cache:'no-store'});
-    const j = await r.json();
-    setItems(j.items || []);
-  }
+  const locale = (useLocale() as 'uk'|'en') ?? 'uk';
+  const t = useTranslations('pages.reviews');
+  const tForm = useTranslations('pages.reviews.form');
 
-  useEffect(()=>{ load(); },[]);
+  useEffect(() => {
+    let ignore=false;
+    (async () => {
+      try{
+        const res = await fetch('/api/reviews', {cache:'no-store'});
+        const data = await res.json();
+        if(!ignore) setItems(Array.isArray(data?.items) ? data.items : []);
+      }catch{ /* ignore */ }
+    })();
+    return () => { ignore=true; };
+  }, []);
 
   async function onSubmit(e: React.FormEvent){
     e.preventDefault();
-    setPending(true); setError(null);
+    setSubmitting(true);
     try{
-      const r = await fetch('/api/reviews', {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(form)});
-      const j = await r.json();
-      if(!r.ok) throw new Error(j?.error || 'Помилка');
+      await fetch('/api/reviews', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify(form)
+      });
       setForm({authorName:'', role:'donor', text:''});
-      await load();
-    }catch(err:any){
-      setError(err.message);
-    }finally{
-      setPending(false);
-    }
+    }catch{/* ignore */}
+    setSubmitting(false);
   }
+
+  const nfLocale = locale === 'en' ? 'en-US' : 'uk-UA';
 
   return (
     <section className="section">
       <Container>
-        <h1 className="h1">Відгуки</h1>
+        <h1 className="h1">{t('title')}</h1>
 
         <form onSubmit={onSubmit} className="bg-white rounded-2xl border p-5 mt-6 space-y-3">
           <div className="grid md:grid-cols-2 gap-4">
-            <input className="border rounded-xl p-3" placeholder="Імʼя" required minLength={2} maxLength={80}
+            <input className="border rounded-xl p-3" placeholder={tForm('name')} required minLength={2} maxLength={80}
               value={form.authorName} onChange={e=>setForm({...form, authorName: e.target.value})} />
             <select className="border rounded-xl p-3" value={form.role} onChange={e=>setForm({...form, role: e.target.value as any})}>
-              <option value="donor">Донор</option>
-              <option value="recipient">Отримувач</option>
+              <option value="donor">{tForm('donor')}</option>
+              <option value="recipient">{tForm('recipient')}</option>
             </select>
           </div>
-          <textarea className="border rounded-xl p-3 w-full min-h-[120px]" placeholder="Ваш відгук" required minLength={10} maxLength={2000}
+          <textarea className="border rounded-xl p-3 w-full min-h-32" placeholder={tForm('text')} required minLength={10} maxLength={1000}
             value={form.text} onChange={e=>setForm({...form, text: e.target.value})} />
-          {error && <div className="text-red-600 text-sm">{error}</div>}
-          <button className="btn" disabled={pending}>{pending?'Надсилаємо…':'Опублікувати (модерація)'}</button>
-          <p className="text-xs text-slate-500">Показ буде після модерації. Антиспам додамо на наступному етапі.</p>
+          <button className="btn" type="submit" disabled={submitting}>{tForm('submit')}</button>
         </form>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        <div className="grid md:grid-cols-2 gap-6 mt-10">
           {items.map(i => (
             <article key={i.id} className="bg-white rounded-2xl border p-5">
               <div className="flex items-center justify-between gap-3">
@@ -71,7 +76,7 @@ export default function Page(){
                 <span className="badge">{i.role}</span>
               </div>
               <p className="text-slate-600 mt-2 whitespace-pre-line">{i.text}</p>
-              <div className="text-xs text-slate-400 mt-1">{new Date(i.createdAt).toLocaleString('uk-UA')}</div>
+              <div className="text-xs text-slate-400 mt-1">{new Date(i.createdAt).toLocaleString(nfLocale)}</div>
             </article>
           ))}
         </div>

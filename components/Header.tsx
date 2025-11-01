@@ -25,12 +25,12 @@ export default async function Header({locale}: Props) {
   return (
     <header className="border-b bg-transparent sticky top-0 z-50 ua-header ua-animated text-white">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href={asRoute(`/${locale}`)} className="flex items-center gap-2 font-semibold">
+        <Link href={asRoute(`/${locale}`)} className="flex items-center gap-2 font-semibold mr-4 lg:mr-6">
           <Image src="/images/logo.png" alt="" width={28} height={28} className="w-7 h-7 object-contain" priority />
           <span>Волонтери</span>
         </Link>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 lg:ml-6">
           {/* Desktop nav: visible only from >=1024px */}
           <nav className="hidden lg:flex items-center gap-6">
             {items.map(i => (
@@ -40,7 +40,7 @@ export default async function Header({locale}: Props) {
           </nav>
 
           {/* Desktop language switch */}
-          <div className="hidden lg:block">
+          <div className="block">
             <Suspense fallback={null}>
               <LanguageSwitch locale={locale} />
             </Suspense>

@@ -1,11 +1,13 @@
-
 import Container from '@/components/Container';
-export default function Page() {
+import {getTranslations} from 'next-intl/server';
+
+export default async function Page({params}:{params:{locale:'uk'|'en'}}){
+  const t = await getTranslations({locale: params.locale, namespace:'pages'});
   return (
     <section className="section">
       <Container>
-        <h1 className="h1">Пожертвувати</h1>
-        <p className="mt-4 text-slate-600">Страница донатів (пресети, LiqPay/WayForPay/PayPal) — реализуем на Этапі 4.</p>
+        <h1 className="h1">{t('donate.title')}</h1>
+        <p className="mt-4 text-slate-600">{t('common.underConstruction')}</p>
       </Container>
     </section>
   );

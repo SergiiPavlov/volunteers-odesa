@@ -11,6 +11,7 @@ export async function generateStaticParams(){
 
 export default async function Page({params}:{params:{locale:'uk'|'en'}}){
   const t = await getTranslations({locale: params.locale, namespace:'hero'});
+  const tSections = await getTranslations({locale: params.locale, namespace:'sections'});
   const goals = await getQuickGoals(params.locale);
 
   return (
@@ -23,8 +24,8 @@ export default async function Page({params}:{params:{locale:'uk'|'en'}}){
               <h1 className="h1">{t('title')}</h1>
               <p className="text-lg text-slate-700">{t('subtitle')}</p>
               <div className="flex gap-3">
-                <Link href={asRoute(`/${params.locale}/donate`)} className="btn">Підтримати</Link>
-                <Link href={asRoute(`/${params.locale}/about`)} className="btn btn-outline">Дізнатися більше</Link>
+                <Link href={asRoute(`/${params.locale}/donate`)} className="btn">{t("ctaDonate")}</Link>
+                <Link href={asRoute(`/${params.locale}/about`)} className="btn btn-outline">{t("ctaLearnMore")}</Link>
               </div>
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden border bg-slate-100">
@@ -44,8 +45,8 @@ export default async function Page({params}:{params:{locale:'uk'|'en'}}){
       <section className="section">
         <Container>
           <div className="flex items-center justify-between mb-6">
-            <h2 className="h2">Швидкі цілі</h2>
-            <Link href={asRoute(`/${params.locale}/donate`)} className="text-sm">Всі збори →</Link>
+            <h2 className="h2">{tSections("quickGoals")}</h2>
+            <Link href={asRoute(`/${params.locale}/donate`)} className="text-sm">{tSections("allFundraisers")} →</Link>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {goals.map(g => (<GoalCard key={g.id} item={g} />))}

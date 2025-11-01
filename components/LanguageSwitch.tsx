@@ -30,7 +30,7 @@ export default function LanguageSwitch({ locale }: Props) {
     <button
       type="button"
       onClick={() => router.push(asRoute(targetPath))}
-      className="px-3 py-2 rounded-xl border hover:bg-slate-50 text-sm"
+      className="px-3 py-2 rounded-xl border text-sm hover:underline underline-offset-4"
       aria-label="Switch language"
     >
       {other.toUpperCase()}

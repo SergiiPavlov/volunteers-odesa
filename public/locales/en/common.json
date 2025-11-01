@@ -12,11 +12,59 @@
   },
   "hero": {
     "title": "Together for those who protect",
-    "subtitle": "We support military and families with gear, aid and care."
+    "subtitle": "We support military and families with gear, aid and care.",
+    "ctaDonate": "Donate",
+    "ctaLearnMore": "Learn more"
   },
   "sections": {
     "quickGoals": "Quick goals",
-    "allFundraisers": "All fundraisers"
+    "allFundraisers": "All fundraisers",
+    "collected": "Raised",
+    "goal": "Goal",
+    "support": "Support"
+  },
+  "pages": {
+    "donate": {
+      "thankYou": {
+        "title": "Thank you for your support!",
+        "description": "Your contribution helps us deliver aid and equipment to our defenders faster.",
+        "toHome": "Back to home",
+        "seeStories": "See our stories"
+      },
+      "title": "Donate"
+    },
+    "about": {
+      "title": "About the Fund"
+    },
+    "partners": {
+      "title": "Partners"
+    },
+    "news": {
+      "title": "News"
+    },
+    "stories": {
+      "title": "Stories"
+    },
+    "announcements": {
+      "title": "Announcements"
+    },
+    "contacts": {
+      "title": "Contacts"
+    },
+    "reviews": {
+      "title": "Reviews",
+      "form": {
+        "name": "Name",
+        "role": "Role",
+        "donor": "Donor",
+        "recipient": "Recipient",
+        "text": "Review text",
+        "submit": "Send"
+      }
+    },
+    "common": {
+      "underConstruction": "Page under construction. We will connect content from the CMS/payments in the next stages."
+    }
   },
   "pages": {
     "donate": {
@@ -31,5 +79,8 @@
   "lang": {
     "uk": "UA",
     "en": "EN"
+  },
+  "footer": {
+    "copy": "© Volunteer Foundation"
   }
 }
