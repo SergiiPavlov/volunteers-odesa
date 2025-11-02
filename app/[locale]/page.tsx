@@ -7,6 +7,7 @@ import GoalCard from '@/components/cards/GoalCard';
 import {asRoute} from '@/lib/typedRoutes';
 import ImpactCounters from '@/components/sections/ImpactCounters';
 import HowToHelp from '@/components/sections/HowToHelp';
+import ReviewsCarousel from '@/components/sections/ReviewsCarousel';
 
 export async function generateStaticParams(){
   return [{locale:'uk'},{locale:'en'}];
@@ -56,6 +57,7 @@ export default async function Page({params}:{params:{locale:'uk'|'en'}}){
 
       <ImpactCounters />
       <HowToHelp />
+      <ReviewsCarousel />
 
       {/* QUICK GOALS */}
       <section className="section">

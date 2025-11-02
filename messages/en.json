@@ -110,6 +110,17 @@
         "donate": "Donate now",
         "contact": "Contact our team"
       }
+    },
+    "reviews": {
+      "title": "What people say",
+      "donor": "Donor",
+      "recipient": "Recipient",
+      "anonymous": "Anonymous",
+      "empty": "There are no reviews yet. Be the first to leave one.",
+      "ctaAdd": "Leave a review",
+      "navPrev": "Show previous review",
+      "navNext": "Show next review",
+      "navDot": "Go to slide {index}"
     }
   }
 }

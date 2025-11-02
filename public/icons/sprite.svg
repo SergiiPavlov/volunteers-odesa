@@ -48,4 +48,7 @@
     <path d="M9 12v3m6-3v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
     <path d="M8 6a4 4 0 0 1 8 0v3H8V6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
   </symbol>
+  <symbol id="quote" viewBox="0 0 24 24">
+    <path d="M10 4H6a4 4 0 0 0-4 4v5a4 4 0 0 0 4 4h4v-5H7V8h3zM22 4h-4a4 4 0 0 0-4 4v5a4 4 0 0 0 4 4h4v-5h-3V8h3z" fill="currentColor"/>
+  </symbol>
 </svg>
