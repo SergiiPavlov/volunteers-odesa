@@ -5,6 +5,8 @@ import {getTranslations} from 'next-intl/server';
 import {getQuickGoals} from '@/lib/cms/fileProvider';
 import GoalCard from '@/components/cards/GoalCard';
 import {asRoute} from '@/lib/typedRoutes';
+import DonationTicker from '@/components/sections/DonationTicker';
+import ImpactCounters from '@/components/sections/ImpactCounters';
 
 export async function generateStaticParams(){
   return [{locale:'uk'},{locale:'en'}];
@@ -51,6 +53,9 @@ export default async function Page({params}:{params:{locale:'uk'|'en'}}){
           </div>
         </Container>
       </section>
+
+      <DonationTicker />
+      <ImpactCounters />
 
       {/* QUICK GOALS */}
       <section className="section">

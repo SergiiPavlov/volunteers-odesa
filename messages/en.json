@@ -71,5 +71,24 @@
   },
   "footer": {
     "copy": "© Volunteer Foundation"
+  },
+  "home": {
+    "donations": {
+      "ticker": {
+        "title": "Recent donations",
+        "placeholder": "Here we'll show donor name, date and amount",
+        "anonymous": "Anonymous",
+        "marqueeHint": "Swipe or scroll to view"
+      }
+    },
+    "impact": {
+      "title": "Our impact in numbers",
+      "items": {
+        "volunteers": "Active volunteers",
+        "families": "Families supported",
+        "deliveries": "Aid deliveries",
+        "funds": "Funds raised"
+      }
+    }
   }
 }
