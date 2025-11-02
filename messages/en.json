@@ -14,14 +14,15 @@
     "title": "Together for those who protect",
     "subtitle": "We support military and families with gear, aid and care.",
     "ctaDonate": "Donate",
-    "ctaLearnMore": "Learn more"
+    "ctaLearnMore": "Get help"
   },
   "sections": {
     "quickGoals": "Quick goals",
     "allFundraisers": "All fundraisers",
     "collected": "Raised",
     "goal": "Goal",
-    "support": "Support"
+    "support": "Support",
+    "getHelp": "Get help"
   },
   "pages": {
     "donate": {
@@ -62,7 +63,8 @@
         "submit": "Send review",
         "donor": "Donor",
         "recipient": "Recipient"
-      }
+      },
+      "getHelp": "Get help"
     }
   },
   "lang": {
@@ -76,7 +78,7 @@
     "donations": {
       "ticker": {
         "title": "Recent donations",
-        "placeholder": "Here we'll show donor name, date and amount",
+        "placeholder": "Here we'll show donor name, date and amount (anonymous/public)",
         "anonymous": "Anonymous",
         "marqueeHint": "Swipe or scroll to view"
       }

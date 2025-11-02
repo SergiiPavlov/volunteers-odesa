@@ -34,7 +34,7 @@ export default async function Header({locale}: Props) {
   return (
     <header className="sticky top-0 z-50 w-full">
       <div className="ua-header ua-animated text-white">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 md:py-4">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 h-10 md:h-12">
           <Link href={asRoute(`/${locale}`)} className="mr-4 flex items-center gap-2 font-semibold lg:mr-6">
             <Image src="/images/logo.png" alt="" width={28} height={28} className="h-7 w-7 object-contain" priority />
             <span>Волонтери</span>
@@ -75,16 +75,16 @@ export default async function Header({locale}: Props) {
         <div className="mx-auto w-full max-w-7xl px-4">
           <div className="flex h-full items-center gap-4 py-2 md:py-3">
             <p
-              className="shrink-0 font-semibold uppercase tracking-[0.18em] md:tracking-[0.25em] text-white/90 text-[10px] md:text-xs leading-tight"
+              className="shrink-0 font-semibold uppercase tracking-[0.18em] md:tracking-[0.25em] text-white/90 text-[10px] md:text-xs leading-none"
             >
               <span>{titleFirst}</span>
               <br className="md:hidden" />
               <span className="hidden md:inline md:ml-1">{titleRest}</span>
               <span className="md:hidden block">{titleRest}</span>
             </p>
-            <div className="relative flex-1 overflow-hidden">
+            <div className="relative flex-1 overflow-hidden h-full">
               <div
-                className="whitespace-nowrap text-white/95 drop-shadow-sm motion-safe:animate-marquee motion-reduce:animate-none leading-tight"
+                className="whitespace-nowrap text-white/95 drop-shadow-sm motion-safe:animate-marquee motion-reduce:animate-none leading-none"
                 aria-live="polite"
                 role="text"
               >

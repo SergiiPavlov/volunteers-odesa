@@ -43,14 +43,10 @@
   isolation: isolate;
 }
 
-.ua-flag-ribbon--ticker {
-  min-height: 56px;
-}
+.ua-flag-ribbon--ticker { min-height: 40px; }
 
 @media (min-width: 768px) {
-  .ua-flag-ribbon--ticker {
-    min-height: 64px;
-  }
+  .ua-flag-ribbon--ticker { min-height: 40px; }
 }
 
 .ua-flag-ribbon .container,

@@ -38,7 +38,7 @@ export default async function Page({params}:{params:{locale:'uk'|'en'}}){
               <p className="text-lg text-slate-700">{t('subtitle')}</p>
               <div className="flex gap-3 justify-center md:justify-start">
                 <Link href={asRoute(`/${params.locale}/donate`)} className="btn">{t("ctaDonate")}</Link>
-                <Link href={asRoute(`/${params.locale}/about`)} className="btn btn-outline">{t("ctaLearnMore")}</Link>
+                <Link href={asRoute(`/${params.locale}/reviews`)} className="btn btn-outline">{t("ctaLearnMore")}</Link>
               </div>
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden border bg-slate-100">
