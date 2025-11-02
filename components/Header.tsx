@@ -23,8 +23,8 @@ export default async function Header({locale}: Props) {
   ] as const;
 
   return (
-    <header className="border-b bg-transparent sticky top-0 z-50 ua-header ua-animated text-white">
-      <div className="container mx-auto px-4 h-14 md:h-[72px] flex items-center justify-between">
+    <header className="border-b bg-transparent sticky top-0 z-50 w-screen h-14 md:h-[72px] ua-header ua-animated text-white">
+      <div className="container mx-auto flex h-full items-center justify-between px-4">
         <Link href={asRoute(`/${locale}`)} className="flex items-center gap-2 font-semibold mr-4 lg:mr-6">
           <Image src="/images/logo.png" alt="" width={28} height={28} className="w-7 h-7 object-contain" priority />
           <span>Волонтери</span>

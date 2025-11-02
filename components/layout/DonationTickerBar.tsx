@@ -33,8 +33,12 @@ export default function DonationTickerBar() {
   const marqueeItem = `${t('anonymous')} • ${t('placeholder')}`;
 
   return (
-    <div className="ua-flag-ribbon ua-flag-ribbon--ticker sticky top-[56px] md:top-[72px] z-40">
-      <div className="container mx-auto px-4 py-2 md:py-3">
+    <div
+      className="ua-flag-ribbon ua-flag-ribbon--ticker sticky left-0 right-0 top-[56px] md:top-[72px] z-40 w-screen -mt-px"
+      role="region"
+      aria-label="Recent donations"
+    >
+      <div className="mx-auto w-full max-w-7xl px-4 py-2 md:py-3">
         <div
           ref={containerRef}
           className={clsx(
