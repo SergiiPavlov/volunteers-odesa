@@ -12,6 +12,11 @@ export default async function Header({locale}: Props) {
   const tMenu = await getTranslations({locale, namespace: 'menu'});
   const tTicker = await getTranslations({locale, namespace: 'home.donations.ticker'});
 
+  function splitFirstWord(s: string) {
+    const parts = s.trim().split(/\s+/);
+    return [parts[0] ?? '', parts.slice(1).join(' ')];
+  }
+
   const items = [
     { href: `/${locale}`, label: tMenu('home') },
     { href: `/${locale}/about`, label: tMenu('about') },
@@ -22,6 +27,9 @@ export default async function Header({locale}: Props) {
     { href: `/${locale}/reviews`, label: tMenu('reviews') },
     { href: `/${locale}/contacts`, label: tMenu('contacts') },
   ] as const;
+
+  const title = tTicker('title');
+  const [titleFirst, titleRest] = splitFirstWord(title);
 
   return (
     <header className="sticky top-0 z-50 w-full">
@@ -64,14 +72,19 @@ export default async function Header({locale}: Props) {
       </div>
 
       <div className="ua-flag-ribbon ua-flag-ribbon--ticker w-full -mt-px">
-        <div className="mx-auto w-full max-w-7xl px-4 py-2 md:py-3">
-          <div className="flex items-center gap-4">
-            <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.25em] text-white/90">
-              {tTicker('title')}
+        <div className="mx-auto w-full max-w-7xl px-4">
+          <div className="flex h-full items-center gap-4 py-2 md:py-3">
+            <p
+              className="shrink-0 font-semibold uppercase tracking-[0.18em] md:tracking-[0.25em] text-white/90 text-[10px] md:text-xs leading-tight"
+            >
+              <span>{titleFirst}</span>
+              <br className="md:hidden" />
+              <span className="hidden md:inline md:ml-1">{titleRest}</span>
+              <span className="md:hidden block">{titleRest}</span>
             </p>
             <div className="relative flex-1 overflow-hidden">
               <div
-                className="whitespace-nowrap text-white/95 drop-shadow-sm motion-safe:animate-marquee motion-reduce:animate-none"
+                className="whitespace-nowrap text-white/95 drop-shadow-sm motion-safe:animate-marquee motion-reduce:animate-none leading-tight"
                 aria-live="polite"
                 role="text"
               >
