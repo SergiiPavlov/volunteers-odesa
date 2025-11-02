@@ -5,6 +5,8 @@ import {getTranslations} from 'next-intl/server';
 import {getQuickGoals} from '@/lib/cms/fileProvider';
 import GoalCard from '@/components/cards/GoalCard';
 import {asRoute} from '@/lib/typedRoutes';
+import ImpactCounters from '@/components/sections/ImpactCounters';
+import HowToHelp from '@/components/sections/HowToHelp';
 
 export async function generateStaticParams(){
   return [{locale:'uk'},{locale:'en'}];
@@ -36,7 +38,7 @@ export default async function Page({params}:{params:{locale:'uk'|'en'}}){
               <p className="text-lg text-slate-700">{t('subtitle')}</p>
               <div className="flex gap-3 justify-center md:justify-start">
                 <Link href={asRoute(`/${params.locale}/donate`)} className="btn">{t("ctaDonate")}</Link>
-                <Link href={asRoute(`/${params.locale}/about`)} className="btn btn-outline">{t("ctaLearnMore")}</Link>
+                <Link href={asRoute(`/${params.locale}/reviews`)} className="btn btn-outline">{t("ctaLearnMore")}</Link>
               </div>
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden border bg-slate-100">
@@ -51,6 +53,9 @@ export default async function Page({params}:{params:{locale:'uk'|'en'}}){
           </div>
         </Container>
       </section>
+
+      <ImpactCounters />
+      <HowToHelp />
 
       {/* QUICK GOALS */}
       <section className="section">

@@ -3,7 +3,6 @@ import {NextIntlClientProvider} from 'next-intl';
 import {unstable_setRequestLocale} from 'next-intl/server';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import UARibbon from '@/components/UARibbon';
 
 const dictionaries = {
   en: () => import('@/messages/en.json').then(m => m.default),
@@ -34,7 +33,6 @@ export default async function LocaleLayout({
       <body className="bg-gradient-to-b from-cyan-200 min-h-screen to-yellow-200 ua-watermark-body via-lime-200">
         <NextIntlClientProvider messages={messages} locale={params.locale}>
           <Header locale={params.locale} />
-          <UARibbon />
           <main>{children}</main>
           <Footer />
         </NextIntlClientProvider>

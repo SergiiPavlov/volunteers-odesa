@@ -14,14 +14,15 @@
     "title": "Together for those who protect",
     "subtitle": "We support military and families with gear, aid and care.",
     "ctaDonate": "Donate",
-    "ctaLearnMore": "Learn more"
+    "ctaLearnMore": "Get help"
   },
   "sections": {
     "quickGoals": "Quick goals",
     "allFundraisers": "All fundraisers",
     "collected": "Raised",
     "goal": "Goal",
-    "support": "Support"
+    "support": "Support",
+    "getHelp": "Get help"
   },
   "pages": {
     "donate": {
@@ -62,7 +63,8 @@
         "submit": "Send review",
         "donor": "Donor",
         "recipient": "Recipient"
-      }
+      },
+      "getHelp": "Get help"
     }
   },
   "lang": {
@@ -71,5 +73,45 @@
   },
   "footer": {
     "copy": "© Volunteer Foundation"
+  },
+  "home": {
+    "donations": {
+      "ticker": {
+        "title": "Recent donations",
+        "placeholder": "Here we'll show donor name, date and amount (anonymous/public)",
+        "anonymous": "Anonymous",
+        "marqueeHint": "Swipe or scroll to view"
+      }
+    },
+    "impact": {
+      "title": "Our impact in numbers",
+      "items": {
+        "volunteers": "Active volunteers",
+        "families": "Families supported",
+        "deliveries": "Aid deliveries",
+        "funds": "Funds raised"
+      }
+    },
+    "help": {
+      "title": "How you can help",
+      "cards": {
+        "donate": {
+          "title": "Make a donation",
+          "text": "Fund vital equipment and humanitarian aid with a one-time or monthly gift."
+        },
+        "volunteer": {
+          "title": "Join as a volunteer",
+          "text": "Support logistics, fundraising, communications or field missions with your skills."
+        },
+        "partner": {
+          "title": "Become a partner",
+          "text": "Collaborate with us as a business or organization to launch impactful projects."
+        }
+      },
+      "actions": {
+        "donate": "Donate now",
+        "contact": "Contact our team"
+      }
+    }
   }
 }

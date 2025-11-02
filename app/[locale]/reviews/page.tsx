@@ -52,7 +52,7 @@ export default function Page(){
   return (
     <section className="section">
       <Container>
-        <h1 className="h1">{t('title')}</h1>
+<h1 className="h1">{t("title")} <span className="px-3 text-slate-400">/</span> {t("getHelp")}</h1>
 
         <form onSubmit={onSubmit} className="bg-white rounded-2xl border p-5 mt-6 space-y-3">
           <div className="grid md:grid-cols-2 gap-4">

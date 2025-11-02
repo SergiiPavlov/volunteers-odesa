@@ -1,4 +1,3 @@
-
 # Волонтерський фонд — Stage v2 (Next 14, «Швидкі цілі», «Оголошення», «Відгуки», фавікони/логотип)
 
 ## Що всередині
@@ -22,5 +21,38 @@ npm run dev
 - Етап 6: антиспам (hCaptcha/Turnstile), email-нотифікації (Resend).
 
 ## Packaging fix
-ZIP теперь содержит файлы проекта **без** вложенной папки-обёртки (root clean). 
+ZIP теперь содержит файлы проекта **без** вложенной папки-обёртки (root clean).
 Если ранее видели папку вроде `volunteers-odesa-main/` внутри архива — это исправлено.
+
+## Sanity CMS setup (Stage 3 — Step 1)
+
+1. **Створіть Sanity-проєкт**
+   - Зареєструйтесь на [sanity.io](https://www.sanity.io/) (free tier достатньо).
+   - Встановіть CLI (одноразово): `npm install -g @sanity/cli` або використовуйте `npx`.
+   - Запустіть ініціалізацію в корені репозиторію:
+     ```bash
+     npx sanity init --env .env.local
+     ```
+     Оберіть існуючий проєкт або створіть новий, dataset залиште `production` (можна створити іншу назву, але за замовчуванням README і конфіг очікують `production`).
+
+2. **Оновіть локальне оточення**
+   - Після ініціалізації Sanity CLI виведе `projectId`. Скопіюйте його у `.env.local` (на основі `.env.local.example`).
+   - Якщо використовуєте інший dataset, замініть значення `SANITY_DATASET` у `.env.local`.
+   - Згенеруйте токени у [Manage → API](https://www.sanity.io/manage) вашого проєкту:
+     - `SANITY_READ_TOKEN` (Viewer, Read)
+     - `SANITY_WRITE_TOKEN` (Editor, Read + Write)
+   - **Не** додавайте реальні значення в git: лише локальний `.env.local`.
+
+3. **Перевірте схеми**
+   - Локально встановіть залежності для Studio: `npm install --save-dev sanity` (вже додано до `package.json`).
+   - Запустіть Studio, щоб переконатися, що схеми підхопились:
+     ```bash
+     npx sanity dev
+     ```
+     В браузері має відобразитися Studio з документами `Quick Goal`, `Announcement`, `Review`.
+
+4. **Додаткові ролі**
+   - Для редакторів: надайте роль `Editor` (write) або створіть кастомну, якщо потрібно розділити права.
+   - Для перегляду тільки читанням (наприклад, CI/preview) — роль `Viewer`.
+
+Наступні кроки етапу 3 підключать ці схеми до Next.js API та UI. Поточний крок лише готує Studio та структуру даних.
