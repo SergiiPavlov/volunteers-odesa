@@ -7,6 +7,7 @@ import GoalCard from '@/components/cards/GoalCard';
 import {asRoute} from '@/lib/typedRoutes';
 import DonationTicker from '@/components/sections/DonationTicker';
 import ImpactCounters from '@/components/sections/ImpactCounters';
+import HowToHelp from '@/components/sections/HowToHelp';
 
 export async function generateStaticParams(){
   return [{locale:'uk'},{locale:'en'}];
@@ -56,6 +57,7 @@ export default async function Page({params}:{params:{locale:'uk'|'en'}}){
 
       <DonationTicker />
       <ImpactCounters />
+      <HowToHelp />
 
       {/* QUICK GOALS */}
       <section className="section">

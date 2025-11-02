@@ -89,6 +89,27 @@
         "deliveries": "Aid deliveries",
         "funds": "Funds raised"
       }
+    },
+    "help": {
+      "title": "How you can help",
+      "cards": {
+        "donate": {
+          "title": "Make a donation",
+          "text": "Fund vital equipment and humanitarian aid with a one-time or monthly gift."
+        },
+        "volunteer": {
+          "title": "Join as a volunteer",
+          "text": "Support logistics, fundraising, communications or field missions with your skills."
+        },
+        "partner": {
+          "title": "Become a partner",
+          "text": "Collaborate with us as a business or organization to launch impactful projects."
+        }
+      },
+      "actions": {
+        "donate": "Donate now",
+        "contact": "Contact our team"
+      }
     }
   }
 }
