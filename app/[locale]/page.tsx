@@ -5,7 +5,6 @@ import {getTranslations} from 'next-intl/server';
 import {getQuickGoals} from '@/lib/cms/fileProvider';
 import GoalCard from '@/components/cards/GoalCard';
 import {asRoute} from '@/lib/typedRoutes';
-import DonationTicker from '@/components/sections/DonationTicker';
 import ImpactCounters from '@/components/sections/ImpactCounters';
 import HowToHelp from '@/components/sections/HowToHelp';
 
@@ -55,7 +54,6 @@ export default async function Page({params}:{params:{locale:'uk'|'en'}}){
         </Container>
       </section>
 
-      <DonationTicker />
       <ImpactCounters />
       <HowToHelp />
 
