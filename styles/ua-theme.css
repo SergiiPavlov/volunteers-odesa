@@ -27,14 +27,41 @@
 
 /* Blue→Yellow animated ribbon under the header */
 .ua-flag-ribbon {
-  position: sticky;
-  top: 0;
-  height: 6px;
+  position: relative;
   width: 100%;
-  z-index: 49; /* just below the header (which uses z-50) */
+  overflow: hidden;
   background: linear-gradient(90deg, var(--ua-blue), var(--ua-yellow), var(--ua-blue));
   background-size: 300% 100%;
   animation: ua-ribbon-shift 9s linear infinite;
+  isolation: isolate;
+}
+
+.ua-flag-ribbon--ticker {
+  height: auto;
+  min-height: 56px;
+  display: block;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 768px) {
+  .ua-flag-ribbon--ticker {
+    min-height: 64px;
+  }
+}
+
+.ua-flag-ribbon--ticker::before,
+.ua-flag-ribbon--ticker::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.ua-flag-ribbon--ticker::after {
+  filter: blur(24px);
 }
 
 @keyframes ua-ribbon-shift {
