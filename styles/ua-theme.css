@@ -26,8 +26,15 @@
 }
 
 /* Blue→Yellow animated ribbon under the header */
+.ua-flag-ribbon,
+.ua-flag-ribbon::before,
+.ua-flag-ribbon::after {
+  pointer-events: none;
+}
+
 .ua-flag-ribbon {
   position: relative;
+  z-index: 0;
   width: 100%;
   overflow: hidden;
   background: linear-gradient(90deg, var(--ua-blue), var(--ua-yellow), var(--ua-blue));
@@ -44,17 +51,6 @@
   .ua-flag-ribbon--ticker {
     min-height: 64px;
   }
-}
-
-.ua-flag-ribbon,
-.ua-flag-ribbon::before,
-.ua-flag-ribbon::after {
-  pointer-events: none;
-}
-
-.ua-flag-ribbon {
-  position: relative;
-  z-index: 0;
 }
 
 .ua-flag-ribbon .container,

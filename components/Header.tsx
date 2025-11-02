@@ -10,6 +10,7 @@ type Props = { locale: 'uk'|'en' };
 
 export default async function Header({locale}: Props) {
   const tMenu = await getTranslations({locale, namespace: 'menu'});
+  const tTicker = await getTranslations({locale, namespace: 'home.donations.ticker'});
 
   const items = [
     { href: `/${locale}`, label: tMenu('home') },
@@ -23,36 +24,67 @@ export default async function Header({locale}: Props) {
   ] as const;
 
   return (
-    <header className="border-b bg-transparent sticky top-0 z-50 w-screen h-14 md:h-[72px] ua-header ua-animated text-white">
-      <div className="container mx-auto flex h-full items-center justify-between px-4">
-        <Link href={asRoute(`/${locale}`)} className="flex items-center gap-2 font-semibold mr-4 lg:mr-6">
-          <Image src="/images/logo.png" alt="" width={28} height={28} className="w-7 h-7 object-contain" priority />
-          <span>Волонтери</span>
-        </Link>
+    <header className="sticky top-0 z-50 w-full">
+      <div className="ua-header ua-animated text-white">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 md:py-4">
+          <Link href={asRoute(`/${locale}`)} className="mr-4 flex items-center gap-2 font-semibold lg:mr-6">
+            <Image src="/images/logo.png" alt="" width={28} height={28} className="h-7 w-7 object-contain" priority />
+            <span>Волонтери</span>
+          </Link>
 
-        <div className="flex items-center gap-3 lg:ml-6">
-          {/* Desktop nav: visible only from >=1024px */}
-          <nav className="hidden lg:flex items-center gap-6">
-            {items.map(i => (
-              <Link key={i.href} href={asRoute(i.href)} prefetch>{i.label}</Link>
-            ))}
-            <Link href={asRoute(`/${locale}/donate`)} className="btn text-white">{tMenu('donate')}</Link>
-          </nav>
+          <div className="flex items-center gap-3 lg:ml-6">
+            {/* Desktop nav: visible only from >=1024px */}
+            <nav className="hidden items-center gap-6 lg:flex">
+              {items.map(i => (
+                <Link key={i.href} href={asRoute(i.href)} prefetch>
+                  {i.label}
+                </Link>
+              ))}
+              <Link href={asRoute(`/${locale}/donate`)} className="btn text-white">
+                {tMenu('donate')}
+              </Link>
+            </nav>
 
-          {/* Desktop language switch */}
-          <div className="block">
-            <Suspense fallback={null}>
-              <LanguageSwitch locale={locale} />
-            </Suspense>
+            {/* Desktop language switch */}
+            <div className="block">
+              <Suspense fallback={null}>
+                <LanguageSwitch locale={locale} />
+              </Suspense>
+            </div>
+
+            {/* Mobile burger (shown <1024px), includes language switch inside the sheet */}
+            <MobileMenu
+              items={items}
+              donateHref={`/${locale}/donate`}
+              donateLabel={tMenu('donate')}
+              locale={locale}
+            />
           </div>
+        </div>
+      </div>
 
-          {/* Mobile burger (shown <1024px), includes language switch inside the sheet */}
-          <MobileMenu
-            items={items}
-            donateHref={`/${locale}/donate`}
-            donateLabel={tMenu('donate')}
-            locale={locale}
-          />
+      <div className="ua-flag-ribbon ua-flag-ribbon--ticker w-full -mt-px">
+        <div className="mx-auto w-full max-w-7xl px-4 py-2 md:py-3">
+          <div className="flex items-center gap-4">
+            <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.25em] text-white/90">
+              {tTicker('title')}
+            </p>
+            <div className="relative flex-1 overflow-hidden">
+              <div
+                className="whitespace-nowrap text-white/95 drop-shadow-sm motion-safe:animate-marquee motion-reduce:animate-none"
+                aria-live="polite"
+                role="text"
+              >
+                <span>{tTicker('placeholder')}</span>
+                <span aria-hidden="true" className="ml-8">
+                  {tTicker('placeholder')}
+                </span>
+                <span aria-hidden="true" className="ml-8">
+                  {tTicker('placeholder')}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
