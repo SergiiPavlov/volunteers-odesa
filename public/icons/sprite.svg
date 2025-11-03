@@ -64,4 +64,8 @@
     <path d="M8 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
     <path d="M8 16h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
   </symbol>
+  <symbol id="map-pin" viewBox="0 0 24 24">
+    <path d="M12 22s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="12" cy="10" r="2.75" fill="currentColor"/>
+  </symbol>
 </svg>

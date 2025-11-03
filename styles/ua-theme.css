@@ -135,6 +135,27 @@
 }
 
 
+/* Aid map markers */
+.map-marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  border: 2px solid #ffffff;
+  background: var(--ua-blue);
+  box-shadow: 0 6px 18px rgba(0, 87, 184, 0.35);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.map-marker:is(:hover, :focus-visible) {
+  box-shadow: 0 0 0 4px rgba(0, 87, 184, 0.25);
+}
+
+.map-marker:focus-visible {
+  outline: 2px solid var(--ua-yellow);
+  outline-offset: 2px;
+}
+
+
 /* === UA Palette (Header & Hero) === */
 :root {
   --ua-blue-1: #0a6fdc;
