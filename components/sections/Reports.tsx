@@ -161,7 +161,7 @@ export default function Reports() {
           </div>
 
           <div className="flex justify-center md:justify-start">
-            <Link href={asRoute(`/${locale}/about#reports`)} className="text-sm font-semibold text-slate-700 hover:text-brand">
+            <Link href={asRoute(`/${locale}/reports`)} className="text-sm font-semibold text-slate-700 hover:text-brand">
               {t('seeAll')} →
             </Link>
           </div>
