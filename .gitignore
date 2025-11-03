@@ -1,4 +1,3 @@
-
 /node_modules
 .next
 out
@@ -10,3 +9,5 @@ pnpm-debug.log*
 .env.*.local
 .vscode
 .DS_Store
+/public/gallery/*
+!/public/gallery/.keep
