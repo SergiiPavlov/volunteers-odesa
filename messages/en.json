@@ -22,7 +22,10 @@
     "collected": "Raised",
     "goal": "Goal",
     "support": "Support",
-    "getHelp": "Get help"
+    "getHelp": "Get help",
+    "gallery": {
+      "title": "Field gallery"
+    }
   },
   "pages": {
     "donate": {
@@ -73,6 +76,13 @@
   },
   "footer": {
     "copy": "© Volunteer Foundation"
+  },
+  "gallery": {
+    "title": "Field gallery",
+    "teaser": "Moments of our joint work and aid.",
+    "viewAll": "View all photos",
+    "empty": "Photos will appear soon",
+    "close": "Close"
   },
   "home": {
     "reviews": {

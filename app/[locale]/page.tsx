@@ -8,6 +8,7 @@ import {asRoute} from '@/lib/typedRoutes';
 import ImpactCounters from '@/components/sections/ImpactCounters';
 import HowToHelp from '@/components/sections/HowToHelp';
 import ReviewsCarousel from '@/components/sections/ReviewsCarousel';
+import GalleryTeaser from '@/components/sections/GalleryTeaser';
 import Reports from '@/components/sections/Reports';
 
 export async function generateStaticParams(){
@@ -59,6 +60,7 @@ export default async function Page({params}:{params:{locale:'uk'|'en'}}){
       <ImpactCounters />
       <HowToHelp />
       <ReviewsCarousel />
+      <GalleryTeaser />
       <Reports />
 
       {/* QUICK GOALS */}
