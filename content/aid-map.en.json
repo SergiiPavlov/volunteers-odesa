@@ -1,0 +1,100 @@
+[
+  {
+    "id": "kyiv-2024-10",
+    "city": "Kyiv",
+    "region": "Kyiv City",
+    "lat": 50.4501,
+    "lng": 30.5234,
+    "cases": 12,
+    "summary": "Drones, tourniquets, food kits",
+    "reportId": "2024-q3"
+  },
+  {
+    "id": "lviv-2024-09",
+    "city": "Lviv",
+    "region": "Lviv Oblast",
+    "lat": 49.8397,
+    "lng": 24.0297,
+    "cases": 7,
+    "summary": "Tactical medicine for mobilized units",
+    "reportId": "2024-q2"
+  },
+  {
+    "id": "odesa-2024-09",
+    "city": "Odesa",
+    "region": "Odesa Oblast",
+    "lat": 46.4825,
+    "lng": 30.7233,
+    "cases": 9,
+    "summary": "Radios and diesel for evacuations",
+    "reportId": "2024-q3"
+  },
+  {
+    "id": "kharkiv-2024-08",
+    "city": "Kharkiv",
+    "region": "Kharkiv Oblast",
+    "lat": 49.9935,
+    "lng": 36.2304,
+    "cases": 11,
+    "summary": "Mobile shelters and generators",
+    "reportId": "2024-q2"
+  },
+  {
+    "id": "dnipro-2024-08",
+    "city": "Dnipro",
+    "region": "Dnipropetrovsk Oblast",
+    "lat": 48.467,
+    "lng": 35.0433,
+    "cases": 8,
+    "summary": "Gear kits for evacuation crews",
+    "reportId": "2024-q2"
+  },
+  {
+    "id": "chernihiv-2024-07",
+    "city": "Chernihiv",
+    "region": "Chernihiv Oblast",
+    "lat": 51.4982,
+    "lng": 31.2893,
+    "cases": 5,
+    "summary": "Shelter repairs and mobile connectivity",
+    "reportId": "2024-q1"
+  },
+  {
+    "id": "mykolaiv-2024-07",
+    "city": "Mykolaiv",
+    "region": "Mykolaiv Oblast",
+    "lat": 46.975,
+    "lng": 31.9946,
+    "cases": 6,
+    "summary": "Thermal cameras and plate carriers"
+  },
+  {
+    "id": "zaporizhzhia-2024-07",
+    "city": "Zaporizhzhia",
+    "region": "Zaporizhzhia Oblast",
+    "lat": 47.8388,
+    "lng": 35.1396,
+    "cases": 10,
+    "summary": "Starlink antennas and pickup repairs",
+    "reportId": "2024-q3"
+  },
+  {
+    "id": "sumy-2024-06",
+    "city": "Sumy",
+    "region": "Sumy Oblast",
+    "lat": 50.9077,
+    "lng": 34.7981,
+    "cases": 4,
+    "summary": "Evacuation vans and medical kits"
+  },
+  {
+    "id": "kramatorsk-2024-06",
+    "city": "Kramatorsk",
+    "region": "Donetsk Oblast",
+    "lat": 48.7184,
+    "lng": 37.5342,
+    "cases": 7,
+    "summary": "Recon drones and vehicle repairs",
+    "reportId": "2024-q1"
+  }
+]

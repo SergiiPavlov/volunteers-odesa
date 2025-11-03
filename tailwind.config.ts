@@ -17,10 +17,15 @@ export default {
         marquee: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' }
+        },
+        'pulse-soft': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.15)' }
         }
       },
       animation: {
-        marquee: 'marquee 18s linear infinite'
+        marquee: 'marquee 18s linear infinite',
+        'pulse-soft': 'pulse-soft 2.8s ease-in-out infinite'
       }
     }
   },
