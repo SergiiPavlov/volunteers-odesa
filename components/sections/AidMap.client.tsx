@@ -168,7 +168,7 @@ function buildPopupHtml({
   const locationLine = escapeHtml(city) + (region ? `, ${escapeHtml(region)}` : '');
   const summaryBlock = summary ? `<p class="text-sm text-slate-600">${escapeHtml(summary)}</p>` : '';
   const reportBlock = reportFile
-    ? `<p class="text-sm"><a class="underline" href="${reportFile}" target="_blank" rel="noreferrer">${escapeHtml(detailsLabel)} →</a></p>`
+    ? `<p class="text-sm"><a class="underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand/40" href="${reportFile}" target="_blank" rel="noopener noreferrer">${escapeHtml(detailsLabel)} →</a></p>`
     : '';
 
   return `
@@ -379,8 +379,8 @@ export default function AidMapClient() {
                             <a
                               href={report.file}
                               target="_blank"
-                              rel="noreferrer"
-                              className="inline-flex items-center gap-1 text-xs font-semibold text-brand hover:text-brand/80"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-xs font-semibold text-brand hover:text-brand/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand/40"
                             >
                               {t('details')} →
                             </a>
