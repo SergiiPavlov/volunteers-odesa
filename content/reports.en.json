@@ -1,0 +1,29 @@
+[
+  {
+    "id": "2024-q3",
+    "title": "Report Q3 2024",
+    "period": "07–09.2024",
+    "file": "/reports/2024-q3.pdf",
+    "updatedISO": "2024-10-05",
+    "summary": "UAH 1.25M raised for drones and humanitarian kits.",
+    "amountUAH": 1250000
+  },
+  {
+    "id": "2024-q2",
+    "title": "Report Q2 2024",
+    "period": "04–06.2024",
+    "file": "/reports/2024-q2.pdf",
+    "updatedISO": "2024-07-08",
+    "summary": "Spent UAH 980K on medical tourniquets and evacuation fuel.",
+    "amountUAH": 980000
+  },
+  {
+    "id": "2024-q1",
+    "title": "Report Q1 2024",
+    "period": "01–03.2024",
+    "file": "/reports/2024-q1.pdf",
+    "updatedISO": "2024-04-11",
+    "summary": "Funded UAH 750K for winter gear for defenders and displaced families.",
+    "amountUAH": 750000
+  }
+]

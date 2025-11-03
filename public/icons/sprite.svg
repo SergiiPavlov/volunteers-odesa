@@ -58,4 +58,10 @@
     <path d="M7 20v-1.5a4.5 4.5 0 0 1 4.5-4.5h1a4.5 4.5 0 0 1 4.5 4.5V20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M7 14.5c.8-1.6 2.5-2.5 5-2.5s4.2.9 5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   </symbol>
+  <symbol id="report" viewBox="0 0 24 24">
+    <path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M15 3v5h5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M8 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M8 16h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
 </svg>
