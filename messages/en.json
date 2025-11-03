@@ -27,6 +27,48 @@
       "title": "Field gallery"
     }
   },
+  "donate": {
+    "intro": "Choose the amount and confirm — we will redirect you to LiqPay to finish the payment.",
+    "amount": {
+      "label": "Donation amount",
+      "preset": "₴{value, number}",
+      "customLabel": "Custom amount",
+      "customPlaceholder": "For example, 750",
+      "hint": "Minimum amount is ₴{value, number}"
+    },
+    "visibility": {
+      "label": "Visibility in the donation feed",
+      "groupLabel": "Select how we should display your name",
+      "anonymous": "Anonymous",
+      "public": "Public"
+    },
+    "consent": {
+      "label": "Show my name in the donation feed"
+    },
+    "name": {
+      "label": "Name",
+      "placeholder": "Your name",
+      "hint": "We will display it exactly as you type it"
+    },
+    "submit": {
+      "label": "Confirm donation",
+      "loading": "Processing..."
+    },
+    "secureNote": "We rely on LiqPay — payment continues in the secure bank window.",
+    "validationError": "Please double-check the form — some fields need attention.",
+    "successNotice": "Thank you! Redirecting to LiqPay (sandbox)…",
+    "unknownError": "Something went wrong. Try again or contact us.",
+    "networkError": "Could not reach the server. Check your connection and try again.",
+    "preview": {
+      "title": "payloadPreview (development only)"
+    },
+    "errors": {
+      "amountRequired": "Please choose or enter a donation amount.",
+      "amountMin": "The amount must be at least ₴{value, number}.",
+      "nameRequired": "Please tell us your name.",
+      "nameMax": "The name must be {max} characters or less."
+    }
+  },
   "pages": {
     "donate": {
       "thankYou": {

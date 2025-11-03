@@ -89,7 +89,7 @@ export default async function Footer() {
 
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-slate-300">{tFooter('quick')}</p>
-            <ul className="mt-4 flex flex-col gap-3 text-sm text-slate-300">
+            <ul className="mt-4 flex flex-col gap-2 text-sm text-slate-300 md:gap-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -116,7 +116,7 @@ export default async function Footer() {
                     {content.contacts.email}
                   </a>
                 </p>
-                <ul className="mt-2 space-y-1">
+                <ul className="mt-2 space-y-2">
                   {content.contacts.phones.map((phone) => (
                     <li key={phone}>
                       <a
@@ -133,7 +133,7 @@ export default async function Footer() {
 
             <div>
               <p className="text-sm font-semibold uppercase tracking-wide text-slate-300">{tFooter('legal')}</p>
-              <ul className="mt-4 flex flex-col gap-3 text-sm text-slate-300">
+              <ul className="mt-4 flex flex-col gap-2 text-sm text-slate-300 md:gap-3">
                 {legalLinks.map((link) => (
                   <li key={link.href}>
                     <Link

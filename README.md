@@ -15,6 +15,17 @@ npm run dev
 # http://localhost:3000 → редирект на /uk
 ```
 
+## LiqPay sandbox
+
+Додайте у `.env.local` (на основі `.env.local.example`) ключі для LiqPay sandbox:
+
+```bash
+LIQPAY_PUBLIC_KEY=... # тестовий public key
+LIQPAY_PRIVATE_KEY=... # тестовий private key
+```
+
+У production-оточення значення задаються через секрети Vercel.
+
 ## Подальші кроки за DOCS v2
 - Етап 3: підключення CMS (Sanity/Strapi), перенесення даних «Швидких цілей» і контенту.
 - Етап 4: інтеграція платежів (LiqPay/WayForPay/PayPal) + сторінка «Дякуємо».
