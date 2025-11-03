@@ -1,3 +1,4 @@
+import type {Metadata} from 'next';
 import Image from 'next/image';
 import Container from '@/components/Container';
 import Link from 'next/link';
@@ -13,6 +14,37 @@ import Reports from '@/components/sections/Reports';
 
 export async function generateStaticParams(){
   return [{locale:'uk'},{locale:'en'}];
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: {locale: 'uk'|'en'};
+}): Promise<Metadata> {
+  const t = await getTranslations({locale: params.locale, namespace: 'seo.home'});
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: {
+      canonical: `/${params.locale}`,
+      languages: {
+        uk: '/uk',
+        en: '/en',
+      },
+    },
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      images: ['/opengraph-image'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('title'),
+      description: t('description'),
+      images: ['/opengraph-image'],
+    },
+  };
 }
 
 export default async function Page({params}:{params:{locale:'uk'|'en'}}){

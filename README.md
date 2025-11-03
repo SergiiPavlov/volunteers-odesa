@@ -15,6 +15,12 @@ npm run dev
 # http://localhost:3000 → редирект на /uk
 ```
 
+## SEO / OG setup
+
+- Оновіть `NEXT_PUBLIC_SITE_URL` у `.env.local`, щоб вказати продакшн-домен (наприклад, https://volunteers-odesa.vercel.app).
+- Динамічна OG-картка генерується маршрутом `/opengraph-image` (без зображень у репозиторії). За потреби відредагуйте компонент `app/opengraph-image.tsx`.
+- Після оновлення шаблону перезапустіть `npm run build`, щоб переконатися, що Next.js підхопив нові метадані.
+
 ## LiqPay sandbox
 
 Додайте у `.env.local` (на основі `.env.local.example`) ключі для LiqPay sandbox:

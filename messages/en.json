@@ -1,4 +1,14 @@
 {
+  "seo": {
+    "home": {
+      "title": "Volunteer Foundation Odesa — Together for those who protect",
+      "description": "Volunteer Foundation Odesa unites donors to equip defenders, support medics, and care for families in Ukraine."
+    },
+    "donate": {
+      "title": "Donate to Volunteer Foundation Odesa",
+      "description": "Send a secure contribution to supply Ukrainian defenders with gear, transport, and humanitarian aid."
+    }
+  },
   "menu": {
     "home": "Home",
     "about": "About",
