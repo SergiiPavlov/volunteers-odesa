@@ -75,6 +75,17 @@
     "copy": "© Volunteer Foundation"
   },
   "home": {
+    "reviews": {
+      "eyebrow": "Reviews",
+      "title": "Voices of trust",
+      "ctaLeave": "Leave a review",
+      "donor": "Donor",
+      "recipient": "Recipient",
+      "prev": "Show previous reviews",
+      "next": "Show next reviews",
+      "pagination": "Review slides navigation",
+      "slide": "Slide {index} of {total}"
+    },
     "donations": {
       "ticker": {
         "title": "Recent donations",
