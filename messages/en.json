@@ -75,15 +75,6 @@
     "copy": "© Volunteer Foundation"
   },
   "home": {
-    "map": {
-      "title": "Where we help",
-      "subtitle": "Support geography — cities and communities we have already assisted",
-      "cases_one": "{count} case",
-      "cases_few": "{count} cases",
-      "cases_many": "{count} cases",
-      "details": "Details",
-      "close": "Close"
-    },
     "reviews": {
       "eyebrow": "Reviews",
       "title": "Voices of trust",

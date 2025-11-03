@@ -9,7 +9,6 @@ import ImpactCounters from '@/components/sections/ImpactCounters';
 import HowToHelp from '@/components/sections/HowToHelp';
 import ReviewsCarousel from '@/components/sections/ReviewsCarousel';
 import Reports from '@/components/sections/Reports';
-import AidMap from '@/components/sections/AidMap';
 
 export async function generateStaticParams(){
   return [{locale:'uk'},{locale:'en'}];
@@ -61,7 +60,6 @@ export default async function Page({params}:{params:{locale:'uk'|'en'}}){
       <HowToHelp />
       <ReviewsCarousel />
       <Reports />
-      <AidMap />
 
       {/* QUICK GOALS */}
       <section className="section">

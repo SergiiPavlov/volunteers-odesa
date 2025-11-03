@@ -1,5 +1,3 @@
-import 'leaflet/dist/leaflet.css';
-
 import {ReactNode} from 'react';
 import {NextIntlClientProvider} from 'next-intl';
 import {unstable_setRequestLocale} from 'next-intl/server';
