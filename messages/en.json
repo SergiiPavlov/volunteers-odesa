@@ -123,6 +123,14 @@
         "donate": "Donate now",
         "contact": "Contact our team"
       }
+    },
+    "reports": {
+      "title": "Reports & transparency",
+      "subtitle": "Latest spending reports",
+      "download": "Download PDF",
+      "updated": "Updated",
+      "seeAll": "All reports",
+      "noFile": "File unavailable"
     }
   }
 }
