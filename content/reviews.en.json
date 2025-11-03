@@ -1,0 +1,74 @@
+[
+  {
+    "id": "r-2024-001",
+    "name": "Olena P.",
+    "role": "recipient",
+    "text": "The volunteers arranged medical supplies for our brigade in just two days. We felt supported every step of the way.",
+    "dateISO": "2024-10-05",
+    "approved": true
+  },
+  {
+    "id": "r-2024-002",
+    "name": "Serhii K.",
+    "role": "donor",
+    "text": "I receive regular updates on how my donations are used. Transparency like this keeps me contributing month after month.",
+    "dateISO": "2024-09-21",
+    "approved": true
+  },
+  {
+    "id": "r-2024-003",
+    "name": "Nataliia M.",
+    "role": "recipient",
+    "text": "My family got warm clothing and heaters before the first snow. The team truly listens to urgent needs.",
+    "dateISO": "2024-11-12",
+    "approved": true
+  },
+  {
+    "id": "r-2024-004",
+    "name": "Andrew L.",
+    "role": "donor",
+    "text": "Partnering with the foundation made it easy for our company to fundraise and deliver generators to front-line units.",
+    "dateISO": "2024-08-30",
+    "approved": true
+  },
+  {
+    "id": "r-2024-005",
+    "name": "Tetiana R.",
+    "role": "recipient",
+    "text": "Evacuation transport was organized overnight when we had to leave our town. We are safe thanks to your help.",
+    "dateISO": "2024-07-18",
+    "approved": true
+  },
+  {
+    "id": "r-2024-006",
+    "name": "Dmytro B.",
+    "role": "donor",
+    "text": "Every fundraiser has a clear goal and timeline. I trust that my contribution closes a real gap for defenders.",
+    "dateISO": "2024-10-28",
+    "approved": true
+  },
+  {
+    "id": "r-2024-007",
+    "name": "Iryna H.",
+    "role": "recipient",
+    "text": "Counseling support for my children was arranged quickly and free of charge. It made a huge difference for us.",
+    "dateISO": "2024-09-02",
+    "approved": true
+  },
+  {
+    "id": "r-2024-008",
+    "name": "Oleh V.",
+    "role": "donor",
+    "text": "Volunteers shared photos after delivering drones we purchased together. Seeing the impact motivates the whole community.",
+    "dateISO": "2024-10-15",
+    "approved": true
+  },
+  {
+    "id": "r-2024-009",
+    "name": "Yuliia S.",
+    "role": "recipient",
+    "text": "We got laptops for online schooling while displaced. The attention to details proves how much the team cares.",
+    "dateISO": "2024-08-05",
+    "approved": true
+  }
+]
