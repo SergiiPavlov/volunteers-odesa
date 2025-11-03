@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
-  <title id="title">Ukraine map outline</title>
-  <desc id="desc">Simplified vector map of Ukraine with oblasts combined</desc>
-  <g fill="#e2e8f0" stroke="#cbd5f5" stroke-width="3" stroke-linejoin="round">
-    <path
-      d="M98 214 l84 -24 54 -72 72 -22 88 34 48 -12 62 26 80 -14 50 38 62 -16 44 38 -10 54 32 60 -60 36 -12 56 -68 -10 -58 36 -64 -30 -60 26 -74 -12 -38 38 -70 -32 -66 12 -46 -60 -70 -6 -24 -56 -58 -18 10 -66 -40 -52 54 -26 z"
-    />
-  </g>
-</svg>
