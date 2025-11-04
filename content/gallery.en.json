@@ -1,0 +1,98 @@
+[
+  {
+    "id": "p1001",
+    "title": "Kyiv. Collection point",
+    "src": "https://picsum.photos/id/1011/1600/1067",
+    "w": 1600,
+    "h": 1067,
+    "alt": "Volunteers sorting humanitarian aid"
+  },
+  {
+    "id": "p1002",
+    "title": "Lviv. Loading supplies",
+    "src": "https://picsum.photos/id/1015/1600/1067",
+    "w": 1600,
+    "h": 1067,
+    "alt": "Pallets stacked with labeled boxes"
+  },
+  {
+    "id": "p1003",
+    "title": "Odesa. Delivery convoy",
+    "src": "https://picsum.photos/id/1020/1600/1067",
+    "w": 1600,
+    "h": 1067,
+    "alt": "Van loaded with relief supplies"
+  },
+  {
+    "id": "p1004",
+    "title": "Mykolaiv. Medical response",
+    "src": "https://picsum.photos/id/1024/1600/1067",
+    "w": 1600,
+    "h": 1067,
+    "alt": "Medical kits and tourniquets prepared for delivery"
+  },
+  {
+    "id": "p1005",
+    "title": "Kherson. Evacuation support",
+    "src": "https://picsum.photos/id/1027/1600/1067",
+    "w": 1600,
+    "h": 1067,
+    "alt": "Evacuation bus waiting for passengers"
+  },
+  {
+    "id": "p1006",
+    "title": "Dnipro. Warehouse shift",
+    "src": "https://picsum.photos/id/1035/1600/1067",
+    "w": 1600,
+    "h": 1067,
+    "alt": "Humanitarian aid stored on shelves"
+  },
+  {
+    "id": "p1007",
+    "title": "Poltava. Sorting day",
+    "src": "https://picsum.photos/id/1039/1600/1067",
+    "w": 1600,
+    "h": 1067,
+    "alt": "Volunteers organizing boxes together"
+  },
+  {
+    "id": "p1008",
+    "title": "Cherkasy. Supply chain",
+    "src": "https://picsum.photos/id/1043/1600/1067",
+    "w": 1600,
+    "h": 1067,
+    "alt": "People passing boxes in a human chain"
+  },
+  {
+    "id": "p1009",
+    "title": "Kharkiv. Frontline delivery",
+    "src": "https://picsum.photos/id/1050/1600/1067",
+    "w": 1600,
+    "h": 1067,
+    "alt": "Supplies being handed to defenders"
+  },
+  {
+    "id": "p1010",
+    "title": "Zaporizhzhia. Community drive",
+    "src": "https://picsum.photos/id/1051/1600/1067",
+    "w": 1600,
+    "h": 1067,
+    "alt": "Residents bringing donations"
+  },
+  {
+    "id": "p1011",
+    "title": "Sumy. Coordination hub",
+    "src": "https://picsum.photos/id/1062/1600/1067",
+    "w": 1600,
+    "h": 1067,
+    "alt": "Volunteers coordinating logistics at tables"
+  },
+  {
+    "id": "p1012",
+    "title": "Chernihiv. Aid dispatch",
+    "src": "https://picsum.photos/id/1069/1600/1067",
+    "w": 1600,
+    "h": 1067,
+    "alt": "Truck being loaded with supplies"
+  }
+]

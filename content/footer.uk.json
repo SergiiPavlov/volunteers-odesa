@@ -1,0 +1,25 @@
+{
+  "org": {
+    "name": "Волонтери Одеса",
+    "tagline": "Разом для тих, хто захищає"
+  },
+  "contacts": {
+    "address": "м. Одеса, Україна",
+    "email": "info@example.org",
+    "phones": ["+380 00 000 00 00"]
+  },
+  "socials": [
+    {"id": "tg", "label": "Telegram", "href": "https://t.me/..."},
+    {"id": "wa", "label": "WhatsApp", "href": "https://wa.me/..."},
+    {"id": "vb", "label": "Viber", "href": "viber://chat?number=..."}
+  ],
+  "quickLinks": [
+    {"route": "/{locale}/about", "labelKey": "menu.about"},
+    {"route": "/{locale}/donate", "labelKey": "menu.donate"}
+  ],
+  "legalLinks": [
+    {"route": "/{locale}/privacy", "labelKey": "footer.privacy"},
+    {"route": "/{locale}/terms", "labelKey": "footer.terms"}
+  ],
+  "copyright": "© Волонтери Одеса"
+}

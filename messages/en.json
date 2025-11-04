@@ -1,4 +1,14 @@
 {
+  "seo": {
+    "home": {
+      "title": "Volunteer Foundation Odesa — Together for those who protect",
+      "description": "Volunteer Foundation Odesa unites donors to equip defenders, support medics, and care for families in Ukraine."
+    },
+    "donate": {
+      "title": "Donate to Volunteer Foundation Odesa",
+      "description": "Send a secure contribution to supply Ukrainian defenders with gear, transport, and humanitarian aid."
+    }
+  },
   "menu": {
     "home": "Home",
     "about": "About",
@@ -22,7 +32,52 @@
     "collected": "Raised",
     "goal": "Goal",
     "support": "Support",
-    "getHelp": "Get help"
+    "getHelp": "Get help",
+    "gallery": {
+      "title": "Field gallery"
+    }
+  },
+  "donate": {
+    "intro": "Choose the amount and confirm — we will redirect you to LiqPay to finish the payment.",
+    "amount": {
+      "label": "Donation amount",
+      "preset": "₴{value, number}",
+      "customLabel": "Custom amount",
+      "customPlaceholder": "For example, 750",
+      "hint": "Minimum amount is ₴{value, number}"
+    },
+    "visibility": {
+      "label": "Visibility in the donation feed",
+      "groupLabel": "Select how we should display your name",
+      "anonymous": "Anonymous",
+      "public": "Public"
+    },
+    "consent": {
+      "label": "Show my name in the donation feed"
+    },
+    "name": {
+      "label": "Name",
+      "placeholder": "Your name",
+      "hint": "We will display it exactly as you type it"
+    },
+    "submit": {
+      "label": "Confirm donation",
+      "loading": "Processing..."
+    },
+    "secureNote": "We rely on LiqPay — payment continues in the secure bank window.",
+    "validationError": "Please double-check the form — some fields need attention.",
+    "successNotice": "Thank you! Redirecting to LiqPay (sandbox)…",
+    "unknownError": "Something went wrong. Try again or contact us.",
+    "networkError": "Could not reach the server. Check your connection and try again.",
+    "preview": {
+      "title": "payloadPreview (development only)"
+    },
+    "errors": {
+      "amountRequired": "Please choose or enter a donation amount.",
+      "amountMin": "The amount must be at least ₴{value, number}.",
+      "nameRequired": "Please tell us your name.",
+      "nameMax": "The name must be {max} characters or less."
+    }
   },
   "pages": {
     "donate": {
@@ -52,6 +107,21 @@
     "announcements": {
       "title": "Announcements"
     },
+    "privacy": {
+      "title": "Privacy policy",
+      "description1": "We are preparing a full privacy policy that will describe how we collect, use and protect your data.",
+      "description2": "Once the CMS and payment modules are connected, we will outline all data flows and update this page."
+    },
+    "terms": {
+      "title": "Terms of use",
+      "description1": "This page will contain the rules for using the Volunteers Odesa platform and our services.",
+      "description2": "We will publish the final version together with the launch of integrations so you can review it before proceeding."
+    },
+    "reports": {
+      "title": "Reports",
+      "description1": "Here we will collect financial and activity reports to keep supporters informed.",
+      "description2": "The section is being assembled. Meanwhile, explore the latest updates in the home page reports block."
+    },
     "common": {
       "underConstruction": "This page is under construction."
     },
@@ -72,7 +142,20 @@
     "en": "EN"
   },
   "footer": {
+    "quick": "Quick links",
+    "contacts": "Contacts",
+    "follow": "Follow us",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
     "copy": "© Volunteer Foundation"
+  },
+  "gallery": {
+    "title": "Field gallery",
+    "teaser": "Moments of our joint work and aid.",
+    "viewAll": "View all photos",
+    "empty": "Photos will appear soon",
+    "close": "Close"
   },
   "home": {
     "reviews": {
