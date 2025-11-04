@@ -77,13 +77,24 @@ export default async function Page({params}:{params:{locale:'uk'|'en'}}){
               </div>
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden border bg-slate-100">
-              <img
-                src="https://picsum.photos/seed/hero-ukraine/1600/1200"
-                alt="Volunteer activity"
-                className="w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
+              
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcSet="/images/hero/family-ua-800.webp 800w, /images/hero/family-ua-1200.webp 1200w, /images/hero/family-ua-1600.webp 1600w"
+                    sizes="(min-width:1024px) 55vw, 100vw"
+                  />
+                  <img
+                    src="/images/hero/family-ua-1200.jpg"
+                    srcSet="/images/hero/family-ua-800.jpg 800w, /images/hero/family-ua-1200.jpg 1200w, /images/hero/family-ua-1600.jpg 1600w"
+                    sizes="(min-width:1024px) 55vw, 100vw"
+                    alt="Сім’я військового з дитиною на полі пшениці"
+                    className="h-full w-full object-cover"
+                    loading="eager"
+                    decoding="async"
+                  />
+                </picture>
+
             </div>
           </div>
         </Container>
